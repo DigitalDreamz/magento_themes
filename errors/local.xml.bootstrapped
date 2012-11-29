@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Bootstrapped to newer
+ * versions in the future. If you wish to customize Bootstrapped for your
+ * needs please refer to https://github.com/vsubotic/bootstrapped for more information.
+ *
+ * @category    Bootstrapped
+ * @package     Errors
+ */
+-->
+<config>
+    <skin>bootstrapped</skin>
+</config>
