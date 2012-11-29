@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento responsive theme
+ *
+ * @category    design
+ * @package     bootstrapped_default
+ * @copyright   Copyright (c) 2012 Magenthon (http://magenthon.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author      Vedran Subotic <vedran@magenthon.com>
+ */
+
+-->
+<layout version="0.1.0">
+<!--
+Default layout, loads most of the pages
+-->
+
+    <default>
+        <reference name="header">
+            <remove name="top.search"/>
+		    <reference name="top.links">
+	            <remove name="checkout_cart_link"/>
+	            <!--block type="checkout/links" name="checkout_cart_link_custom">
+                    <action method="addCheckoutLink"></action><!- -readding 'checkout'- ->
+                    <action method="addCartLink"></action><!- -readding 'cart'- ->
+                </block-->
+		        <!--remove name="wishlist_link"/ completly removed with whole module -->
+               
+		    	<action method="addLink" translate="label title" module="customer"><label>Contact Us</label><url>contacts</url><title>Contact Us</title><prepare>true</prepare><urlParams/><position>97</position></action>
+	            <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+	            <action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+			</reference>
+        </reference>
+
+        <reference name="left">
+            <block type="catalog/navigation" name="catalog.leftnav.custom" before="wordpress_sidebar_left" template="catalog/navigation/left.custom.phtml"/>
+            <action method="unsetChild"><name>left.permanent.callout</name></action>
+        </reference>
+
+        <!--reference name="right">
+            <action method="unsetChild"><name>right.permanent.callout</name></action>
+            <action method="unsetChild"><name>catalog.compare.sidebar</name></action>
+            <action method="unsetChild"><name>right.reports.product.viewed</name></action>
+            <remove name="paypal.partner.right.logo"/>
+        </reference-->
+
+        <reference name="root">
+            <remove name="global_messages" />
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="alert_global_messages" template="core/messages.phtml" before="-" />
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template" name="jquery_noconflict" template="jquery/noconflict.phtml" before="-" />
+        </reference>
+    </default>
+
+    <customer_account>
+        <remove name="catalog.leftnav.custom" />
+    </customer_account>
+
+    <catalog_category_default translate="label">
+        <remove name="catalog.leftnav" />
+        <reference name="breadcrumbs">
+            <block type="catalog/layer_view" name="catalog.leftnav.breadcrumbs" after="currency" template="catalog/layer/view.phtml"/>
+        </reference>
+    </catalog_category_default>
+    
+    <catalog_category_layered translate="label">
+        <remove name="catalog.leftnav" />
+        <reference name="breadcrumbs">
+            <block type="catalog/layer_view" name="catalog.leftnav.breadcrumbs" after="currency" template="catalog/layer/view.phtml"/>
+        </reference>
+    </catalog_category_layered>
+
+	<catalog_product_view translate="label">
+		<reference name="content">
+			<remove name="product.info.addto" /> <!--recently compared prod-->
+		    <block type="widgetslider/default" name="widgetslider" before="product.info">
+				<action method="setImage"><image>png.php/940x313-0000CC.png</image></action>
+				<action method="setTitle"><title>Some title</title></action>
+			</block>
+        </reference>
+		<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="product.info.additional">
+            <action method="unsetChild" ifconfig="easy_tabs/general/tagstabbed"><name>product_tag_list</name></action>
+            <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs">
+                <action method="setTemplate" ifconfig="easy_tabs/general/enabled"><template>components/nav_tabs.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/general/descriptiontabbed"><alias>description_tabbed</alias><title>Product Description</title><block>catalog/product_view_description</block><template>easytabs/description.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/general/additionaltabbed"><alias>additional_tabbed</alias><title>Additional Information</title><block>catalog/product_view_attributes</block><template>easytabs/attributes.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/general/upsellproductstabbed"><alias>upsell_products_tabbed</alias><title>We Also Recommend</title><block>catalog/product_list_upsell</block><template>catalog/product/list/upsell.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/general/relatedtabbed"><alias>related_tabbed</alias><title>Related Products</title><block>catalog/product_list_related</block><template>easytabs/catalogproductrelated.phtml</template></action>
+                <action method="addTab" translate="title" module="tag"     ifconfig="easy_tabs/general/tagstabbed"><alias>tags_tabbed</alias><title>Product Tags</title><block>tag/product_list</block><template>easytabs/catalogproducttags.phtml</template></action>
+                <action method="addTab" translate="title" module="review"  ifconfig="easy_tabs/general/reviewtabbed"><alias>review_tabbed</alias><title>Product's Review</title><block>review/product_view_list</block><template>easytabs/catalogproductreview.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/custom/customtab"><alias>custom</alias><title>Custom tab</title><block>catalog/product_view</block><template>easytabs/catalogproductcustom.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/custom/customtab1"><alias>custom1</alias><title>Custom tab</title><block>catalog/product_view</block><template>easytabs/catalogproductcustom1.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/custom/customtab2"><alias>custom2</alias><title>Custom tab</title><block>catalog/product_view</block><template>easytabs/catalogproductcustom2.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/custom/customtab3"><alias>custom3</alias><title>Custom tab</title><block>catalog/product_view</block><template>easytabs/catalogproductcustom3.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/custom/customtab4"><alias>custom4</alias><title>Custom tab</title><block>catalog/product_view</block><template>easytabs/catalogproductcustom4.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/customcms/tabcms"><alias>cms</alias><title>CMS tab</title><block>core/template</block><template>easytabs/catalogproductcms.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/customcms/tabcms1"><alias>cms1</alias><title>CMS tab</title><block>core/template</block><template>easytabs/catalogproductcms1.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/customcms/tabcms2"><alias>cms2</alias><title>CMS tab</title><block>core/template</block><template>easytabs/catalogproductcms2.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/customcms/tabcms3"><alias>cms3</alias><title>CMS tab</title><block>core/template</block><template>easytabs/catalogproductcms3.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog" ifconfig="easy_tabs/customcms/tabcms4"><alias>cms4</alias><title>CMS tab</title><block>core/template</block><template>easytabs/catalogproductcms4.phtml</template></action>
+            </block>
+        </reference>
+	</catalog_product_view>
+
+    <tag_list_index translate="label">
+        <label>Tags List (All Available)</label>
+        <!-- Mage_Tag -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/3columns.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <remove name="tags_popular" />
+        </reference>
+    </tag_list_index>
+
+</layout>
