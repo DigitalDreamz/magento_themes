@@ -50,27 +50,9 @@ Default layout, loads most of the pages
 				<!--action method="addItem"><type>skin_js</type><name>js/google-code-prettify/prettify.js</name></action-->
 				<!--action method="addCss"><stylesheet>js/google-code-prettify/prettify.css</stylesheet></action-->
 
-				<!-- Bootstrap -->
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-alert.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-modal.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-dropdown.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-scrollspy.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-tab.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-tooltip.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-popover.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-button.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-collapse.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-carousel.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action>
-				<action method="addItem"><type>skin_js</type><name>js/application.js</name></action>
-
                 <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
                 <!--action method="addCss"><stylesheet>less/bootstrap.less</stylesheet></action>
                 <action method="addItem"><type>skin_js</type><name>js/less.min.js</name><aParams>rel="stylesheet/less"</aParams></action-->
-
-                <action method="addCss"><stylesheet>css/docs.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/diff.css</stylesheet></action>
 
             </block>
 
