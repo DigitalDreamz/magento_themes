@@ -28,10 +28,17 @@
  * Product view template
  *
  * @see Mage_Catalog_Block_Product_View
+ * getTabs() = array(
+ * 	   0 => array(
+ *	       'title' => 'Tab Title',
+ *	       'alias' => '[custom|cms]tab_alias' // $this->getChildHtml($_tab['alias']));
+ *     )
+ * )
  */
 ?>
 <ul class="nav nav-tabs" id="myTab">
     <?php $i = 0; ?>
+    <?php //require_once "ChromePhp.php";console::log($this->getTabs());?>
     <?php foreach ($this->getTabs() as $_index => $_tab): ?>
         <?php if($this->getChildHtml($_tab['alias']) && strlen(strip_tags(trim($this->getChildHtml($_tab['alias']))))>0): ?>
             <?php
@@ -49,7 +56,7 @@
                 }
 
             ?>
-            <li<?php echo !$i  ? ' class="active"' : '' ?>><a href="#<?php echo $_tab['alias'] ?>"><?php echo $tab_title; ?></a></li>
+            <li<?php echo !$i  ? ' class="active"' : '' ?>><a href="#<?php echo $_tab['alias'] ?>"><?php echo $this->__($tab_title); ?></a></li>
 	    <?php $i++; ?>
         <?php endif; ?>
     <?php endforeach; ?>
