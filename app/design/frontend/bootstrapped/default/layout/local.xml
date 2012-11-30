@@ -34,7 +34,24 @@ Default layout, loads most of the pages
             <block type="core/template" name="alert_global_messages" template="core/messages.phtml" before="-" />
         </reference>
         <reference name="before_body_end">
-            <block type="core/template" name="jquery_noconflict" template="jquery/noconflict.phtml" before="-" />
+			<block type="page/html_head" name="foot" as="foot" template="page/html/foot.phtml">
+			 
+				<!-- Bootstrap -->
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-alert.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-modal.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-dropdown.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-scrollspy.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-tab.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-tooltip.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-popover.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-button.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-collapse.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-carousel.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action>
+				<!--action method="addItem"><type>skin_js</type><name>js/application.js</name></action-->
+			 
+			</block>
         </reference>
     </default>
 
