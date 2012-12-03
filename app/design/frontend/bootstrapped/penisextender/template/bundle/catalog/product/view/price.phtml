@@ -39,7 +39,7 @@ $isMAPTypeOnGesture = Mage::helper('catalog')->isShowPriceOnGesture($_product);
 $canApplyMAP  = Mage::helper('catalog')->canApplyMsrp($_product);
 ?>
 <?php if ($_product->getCanShowPrice() !== false):?>
-<div class="price-box span3">
+<div class="price-box span2">
 	<?php if (!$this->getWithoutPrice()): ?>
     <span<?php if (!$isMAPTypeOnGesture && $canApplyMAP): ?> style="display:none"<?php endif ?> class="full-product-price">
     <?php if ($this->helper('tax')->displayBothPrices()): ?>
