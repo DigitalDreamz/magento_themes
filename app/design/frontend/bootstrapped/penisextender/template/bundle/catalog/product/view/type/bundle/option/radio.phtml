@@ -45,10 +45,9 @@
 		        	<?php endif;?>
 		        	<strong>
 		        		<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
-						<span class="price-notice">+<span class="price"><?php echo Mage::getModel('directory/currency')->format(
-							$this->getSelectionPrice($_selection)
-							//$this->getSelectionPrice($_product)
-						) ?></span></span>
+		        		<?php if($_section_price = $this->getSelectionPrice($_selection)):?>
+						<span class="price-notice">+<span class="price"><?php echo Mage::getModel('directory/currency')->format($_section_price)?></span></span>
+						<?php endif;?>
 		        	</strong>
 		    		<p><?php echo $_helper->productAttribute($_selection, $_selection->getName(), 'name') ?></p>
 		        	<?php //echo $this->getSelectionTitlePrice($_selection) ?>
