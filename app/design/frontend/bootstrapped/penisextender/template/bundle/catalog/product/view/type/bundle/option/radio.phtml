@@ -35,11 +35,6 @@
             </label>
         <?php endif; ?>
         <?php foreach ($_selections as $_selection): ?>
-        	<?php require_once "ChromePhp.php";
-        	//console::log($_selection->getImage());
-        	console::log($_selection);
-        	//console::log($_selection->getImageUrl());
-        	?>
             <label class="btn-group radio <?php echo $_option->getRequired()?' required':''?>" for="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>">
             	<div class="btn btn-big">
 		        	<input type="radio" onclick="bundle.changeSelection(this)" <?php echo $_option->getRequired()?'required="required"':'' ?> id="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]"<?php if ($this->_isSelected($_selection)) echo ' checked="checked"' ?><?php if (!$_selection->isSaleable()) echo ' disabled="disabled"' ?>value="<?php echo $_selection->getSelectionId() ?>"/>
@@ -67,6 +62,8 @@
         <div id="bundle-option-<?php echo $_option->getId() ?>-container"></div>
     <?php endif; ?>
     </div>
-    <?php /*span class="qty-holder">
+    <?php if ($_canChangeQty):?>
+    <span class="qty-holder">
         <label for="bundle-option-<?php echo $_option->getId() ?>-qty-input"><?php echo $this->__('Qty:') ?>&nbsp;</label><input onkeyup="bundle.changeOptionQty(this, event)" onblur="bundle.changeOptionQty(this, event)" <?php if (!$_canChangeQty) echo ' disabled="disabled"' ?> id="bundle-option-<?php echo $_option->getId() ?>-qty-input" class="input-text qty<?php if (!$_canChangeQty) echo ' qty-disabled' ?>" type="text" name="bundle_option_qty[<?php echo $_option->getId() ?>]" value="<?php echo $_defaultQty ?>"/>
-    </span*/?>
+    </span>
+    <?php endif;?>
