@@ -13,7 +13,7 @@
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php if($_product->isSaleable()): ?>
     <div class="form-inline">
-        <?php if(!$_product->isGrouped()): ?>
+        <?php if(!$_product->isGrouped() && $_product->getTypeId() !== "bundle"): ?>
         <label for="qty"><strong><?php echo $this->__('Qty:') ?></strong></label>
         <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="span1 input-text qty" />
         <?php endif; ?>
