@@ -34,7 +34,7 @@ Product.Bundle.prototype = {
         // Set preconfigured values for correct price base calculation
         if (config.defaultValues) {
             for (var option in config.defaultValues) {
-                if (this.config['options'][option].isMulti) {
+                if (this.config.options[option]['isMulti']) {
                     var selected = new Array();
                     for (var i = 0; i < config.defaultValues[option].length; i++) {
                         selected.push(config.defaultValues[option][i]);
@@ -50,7 +50,7 @@ Product.Bundle.prototype = {
     },
     changeSelection: function(selection){
         var parts = selection.id.split('-');
-        if (this.config['options'][parts[2]].isMulti) {
+        if (this.config.options[parts[2]]['isMulti']) {
             selected = new Array();
             if (selection.tagName == 'SELECT') {
                 for (var i = 0; i < selection.options.length; i++) {
@@ -100,7 +100,7 @@ Product.Bundle.prototype = {
             dispositionPrice: dispositionPrice,
             bundle: this
         });
-        if (!event.noReloadPrice) {
+        if (!event.noReloadPrice && typeof optionsPrice !== 'undefined') {
             optionsPrice.specialTaxPrice = 'true';
             optionsPrice.changePrice('bundle', calculatedPrice);
             optionsPrice.changePrice('nontaxable', dispositionPrice);
@@ -112,82 +112,84 @@ Product.Bundle.prototype = {
     },
 
     selectionPrice: function(optionId, selectionId) {
-        if (selectionId == '' || selectionId == 'none') {
-            return 0;
-        }
-        var qty = null;
-        if (this.config.options[optionId].selections[selectionId].customQty == 1 && !this.config['options'][optionId].isMulti) {
-            if ($('bundle-option-' + optionId + '-qty-input')) {
-                qty = $('bundle-option-' + optionId + '-qty-input').value;
-            } else {
-                qty = 1;
-            }
-        } else {
-            qty = this.config.options[optionId].selections[selectionId].qty;
-        }
+        if (this.config && (selection = this.config.selections[selectionId])) {
+		    var qty = null;
+		    if ( selection.customQty == 1 && !this.config.options[optionId]['isMulti']) {
+		        if ($('bundle-option-' + optionId + '-qty-input')) {
+		            qty = $('bundle-option-' + optionId + '-qty-input').value;
+		        } else {
+		            qty = 1;
+		        }
+		    } else {
+		        if(selection)
+		        	qty = selection.qty;
+		    }
 
-        if (this.config.priceType == '0') {
-            price = this.config.options[optionId].selections[selectionId].price;
-            tierPrice = this.config.options[optionId].selections[selectionId].tierPrice;
+		    if (this.config.priceType == '0') {
+		        price = selection.price;
+		        tierPrice = selection.tierPrice;
 
-            for (var i=0; i < tierPrice.length; i++) {
-                if (Number(tierPrice[i].price_qty) <= qty && Number(tierPrice[i].price) <= price) {
-                    price = tierPrice[i].price;
-                }
-            }
-        } else {
-            selection = this.config.options[optionId].selections[selectionId];
-            if (selection.priceType == '0') {
-                price = selection.priceValue;
-            } else {
-                price = (this.config.basePrice*selection.priceValue)/100;
-            }
+		        for (var i=0; i < tierPrice.length; i++) {
+		            if (Number(tierPrice[i].price_qty) <= qty && Number(tierPrice[i].price) <= price) {
+		                price = tierPrice[i].price;
+		            }
+		        }
+		    } else {
+		        if (selection.priceType == '0') {
+		            price = selection.priceValue;
+		        } else {
+		            price = (this.config.basePrice*selection.priceValue)/100;
+		        }
+		    }
+		    //price += selection.plusDisposition;
+		    //price -= selection.minusDisposition;
+		    //return price*qty;
+			var disposition = selection.plusDisposition +
+			    selection.minusDisposition;
+
+		    if (this.config.specialPrice) {
+		        newPrice = (price*this.config.specialPrice)/100;
+		        newPrice = (Math.round(newPrice*100)/100).toString();
+		        price = Math.min(newPrice, price);
+		    }
+
+		    if (selection.priceInclTax !== undefined) {
+		        priceInclTax = selection.priceInclTax;
+		        price = selection.priceExclTax !== undefined ? selection.priceExclTax : selection.price;
+		    } else {
+		        priceInclTax = price;
+		    }
+
+		    var result = new Array(price*qty, disposition*qty, priceInclTax*qty);
+		    return result;
         }
-        //price += this.config.options[optionId].selections[selectionId].plusDisposition;
-        //price -= this.config.options[optionId].selections[selectionId].minusDisposition;
-        //return price*qty;
-        var disposition = this.config.options[optionId].selections[selectionId].plusDisposition +
-            this.config.options[optionId].selections[selectionId].minusDisposition;
-
-        if (this.config.specialPrice) {
-            newPrice = (price*this.config.specialPrice)/100;
-            newPrice = (Math.round(newPrice*100)/100).toString();
-            price = Math.min(newPrice, price);
-        }
-
-        selection = this.config.options[optionId].selections[selectionId];
-        if (selection.priceInclTax !== undefined) {
-            priceInclTax = selection.priceInclTax;
-            price = selection.priceExclTax !== undefined ? selection.priceExclTax : selection.price;
-        } else {
-            priceInclTax = price;
-        }
-
-        var result = new Array(price*qty, disposition*qty, priceInclTax*qty);
-        return result;
+        return 0;
     },
 
     populateQty: function(optionId, selectionId){
-        if (selectionId == '' || selectionId == 'none') {
-            this.showQtyInput(optionId, '0', false);
-            return;
+        if (this.config && (selection = this.config.selections[selectionId])) {
+		    if (selection && selection.customQty == 1) {
+		        this.showQtyInput(optionId, selection.qty, true);
+		    } else if (selection) {
+		        this.showQtyInput(optionId, selection.qty, false);
+		    }
         }
-        if (this.config.options[optionId].selections[selectionId].customQty == 1) {
-            this.showQtyInput(optionId, this.config.options[optionId].selections[selectionId].qty, true);
-        } else {
-            this.showQtyInput(optionId, this.config.options[optionId].selections[selectionId].qty, false);
-        }
+        this.showQtyInput(optionId, '0', false);
+        return;
     },
 
     showQtyInput: function(optionId, value, canEdit) {
-        elem = $('bundle-option-' + optionId + '-qty-input');
-        elem.value = value;
-        elem.disabled = !canEdit;
-        if (canEdit) {
-            elem.removeClassName('qty-disabled');
-        } else {
-            elem.addClassName('qty-disabled');
-        }
+    	if(optionId){
+		    if(elem = $('bundle-option-' + optionId + '-qty-input')){
+				elem.value = value;
+				elem.disabled = !canEdit;
+				if (canEdit) {
+				    elem.removeClassName('qty-disabled');
+				} else {
+				    elem.addClassName('qty-disabled');
+				}
+		    }//else console.log(elem,'bundle-option-' + optionId + '-qty-input');
+    	}
     },
 
     changeOptionQty: function (element, event) {
@@ -202,10 +204,12 @@ Product.Bundle.prototype = {
         }
         parts = element.id.split('-');
         optionId = parts[2];
-        if (!this.config['options'][optionId].isMulti) {
+        if (!this.config['options'][optionId]['isMulti']) {
             selectionId = this.config.selected[optionId][0];
-            this.config.options[optionId].selections[selectionId].qty = element.value*1;
-            this.reloadPrice();
+			if(this.config && selection = this.config.selections[selectionId]){
+		        selection.qty = element.value*1;
+		        this.reloadPrice();
+			}
         }
     },
 
