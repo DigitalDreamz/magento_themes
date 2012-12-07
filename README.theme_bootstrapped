@@ -27,6 +27,18 @@ Download whole content and put in your public_html folder of Magento installatio
 
 Navigate to design configuration in Magento admin panel and for theme package type "bootstrapped".
 
+Change default <skin> variable to "bootstrapped" in errors/local.xml as shown in local.xml.theme_bootstrapped
+
+Dependences:
+------------
+
+LESS:
+
+    js/less-1.3.1.min.js
+
+jQuery:
+
+    js/jquery/jquery-1.7.2.min.js
 
 
 Twitter account
