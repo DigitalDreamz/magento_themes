@@ -1,0 +1,34 @@
+<?php
+	$bannerCollection = $this->getBannerCollection();
+	$i = 0;
+?>
+<?php $timeDelay = $this->getDelayTime() ?>
+<?php $showdesc = $this->isShowDescription() ?>
+<?php $listStyle = $this->getListStyle() ?>
+<?php $imagewidth = $this->getImageWidth() ?>
+<?php $imageheight = $this->getImageHeight() ?>
+
+<?php if (!count($bannerCollection)): ?>
+<?php elseif ($listStyle == '1'):?>
+
+
+<div id="myCarousel" class="carousel slide">
+	<!-- Carousel items -->
+	<div class="carousel-inner">
+		<?php $i = 0; foreach ($bannerCollection as $banner): $i++; ?>
+		<div id="tab<?php echo $i;?>" class="item<?php @$i?' active':'';?>" style="background: url('<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $banner['filename']?>') no-repeat;background-size:100%;height:200px;">
+			<a href="<?php echo $banner['weblink'];?>">
+			<h1><?php echo $banner['title']?></h1>				
+			<?php if ($showdesc == '1'):?>
+				<?php echo $banner['content']; ?>
+			<?php endif;?>
+			</a>
+		</div>
+		<?php endforeach; ?>
+	</div>
+	<!-- Carousel nav -->
+	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+<?php endif;?>
+
