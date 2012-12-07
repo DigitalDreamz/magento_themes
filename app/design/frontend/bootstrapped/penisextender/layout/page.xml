@@ -46,6 +46,7 @@ Default layout, loads most of the pages
                 <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
                 <action method="addItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
                 <action method="addItem"><type>skin_js</type><name>js/ie6.js</name><params/><if>lt IE 7</if></action-->
+		    	<action method="removeItem"><type>skin_css</type><name>css/easytabs.css</name></action>
 
 				<!--action method="addItem"><type>skin_js</type><name>js/google-code-prettify/prettify.js</name></action-->
 				<!--action method="addCss"><stylesheet>js/google-code-prettify/prettify.css</stylesheet></action-->
@@ -103,12 +104,31 @@ Default layout, loads most of the pages
 
             <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">
                 <label>Page Bottom</label>
+				<block type="page/html_head" name="foot" as="foot" template="page/html/foot.phtml">
+				 
+					<!-- Bootstrap -->
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-alert.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-modal.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-dropdown.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-scrollspy.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-tab.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-tooltip.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-popover.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-button.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-collapse.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-carousel.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action>
+					<!--action method="addItem"><type>skin_js</type><name>js/application.js</name></action-->
+				 
+				</block>
             </block>
         </block>
 
         <!--block type="core/profiler" output="toHtml" name="core_profiler"/-->
     </default>
 
+	<!-- TODO: prepeare for print-->
     <print translate="label" module="page">
         <label>All Pages (Print Version)</label>
         <!-- Mage_Page -->
@@ -135,6 +155,27 @@ Default layout, loads most of the pages
                 <label>Main Content Area</label>
             </block>
 
+            <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">
+                <label>Page Bottom</label>
+				<block type="page/html_head" name="foot" as="foot" template="page/html/foot.phtml">
+				 
+					<!-- Bootstrap - ->
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-alert.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-modal.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-dropdown.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-scrollspy.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-tab.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-tooltip.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-popover.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-button.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-collapse.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-carousel.js</name></action>
+					<action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action>
+					<!- -action method="addItem"><type>skin_js</type><name>js/application.js</name></action-->
+				 
+				</block>
+            </block>
         </block>
     </print>
 
