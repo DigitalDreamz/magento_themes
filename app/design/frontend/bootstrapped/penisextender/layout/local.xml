@@ -17,6 +17,9 @@ Default layout, loads most of the pages
 -->
 
     <default>
+    	<reference name="head">
+	    	<action method="removeItem"><type>skin_css</type><name>css/easytabs.css</name></action>
+    	</reference>
         <reference name="header">
             <remove name="top.search"/>
 		    <reference name="top.links">
