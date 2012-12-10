@@ -64,8 +64,16 @@ Default layout, loads most of the pages
             <block type="page/html_notices" name="global_notices" as="global_notices" template="page/html/notices.phtml" />
 
             <block type="page/html_header" name="header" as="header">
+		        <block type="page/template_links" name="sponsor.links" as="sponsorLinks" template="page/template/links.phtml" >
+					<action method="setTitle"><title>Nos autres sites</title></action>
+					<action method="setIsPills"><is_list>true</is_list></action>
+					<action method="addLink"><title>Abcircle.fr</title><url></url></action>
+					<action method="addLink"><divider/></action>
+					<action method="addLink"><title>Bestoftv.fr</title><url></url></action>
+					<action method="addLink"><title>Shake-weight.fr</title><url></url></action>
+				</block>
                 <block type="page/template_links" name="top.links" as="topLinks">
-                    <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
+                	
                 </block>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
                     <label>Navigation Bar</label>
@@ -94,12 +102,92 @@ Default layout, loads most of the pages
             </block>
 
             <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
-                <block type="page/html_wrapper" name="bottom.container" as="bottomContainer" translate="label">
+            	<remove name="cms_footer_links"/>
+                <!--block type="page/html_wrapper" name="bottom.container" as="bottomContainer" translate="label">
                     <label>Page Footer</label>
                     <action method="setElementClass"><value>bottom-container</value></action>
-                </block>
-                <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
-                <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml"/>
+                </block-->
+                <!--block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/-->
+	            <block type="core/template" name="footer.sections" template="bootstrap/grids/row-fluid.phtml">     
+				    <block type="core/template" name="footer.sections.first_column" template="bootstrap/grids/span4.phtml">     
+				        <!--block type="page/template_links" name="footer_links" template="page/template/links.phtml" >
+							<action method="setTitle"><title>About</title></action>
+							<action method="setIsList"><is_list>true</is_list></action>
+						</block-->
+				        <block type="page/template_links" name="your_order" template="page/template/links.phtml" >
+							<action method="setTitle"><title>A propos</title></action>
+							<!--action method="setIsTabs"><is_tabs>true</is_tabs></action-->
+							<!--action method="setIsStacked"><is_stacked>true</is_stacked></action-->
+							<action method="setIsList"><is_list>true</is_list></action>
+							<action method="addLink"><title>Qui sommes-nous ?</title><url></url></action>
+							<action method="addLink"><title>Notre ethique</title><url></url></action>
+						</block>
+					</block>
+				    <block type="core/template" name="footer.sections.second_column" template="bootstrap/grids/span4.phtml">     
+				        <block type="page/template_links" name="your_order" template="page/template/links.phtml" >
+							<action method="setTitle"><title>Votre commande</title></action>
+							<action method="setIsList"><is_list>true</is_list></action>
+							<action method="addLink"><title>La livraison</title><url></url></action>
+							<action method="addLink"><title>Nos CGV</title><url></url></action>
+						</block>
+					</block>
+				    <block type="core/template" name="footer.sections.third_column" template="bootstrap/grids/span4.phtml">     
+				        <!--block type="page/template_links" name="contact_us" template="page/template/links.phtml" >
+							<action method="setTitle"><title>Contactez-nous</title></action>
+							<action method="setIsList"><is_list>true</is_list></action>
+							<action method="addLink">
+								<toHtml>
+								</toHtml>
+							</action>
+						</block-->
+						<!--block type="core/template" name="contact_us" template="page/html/more.phtml"></block-->
+
+
+						<block type="cms/block" name="contact_us">
+							<action method="setBlockId"><block_id>footer_contacts</block_id></action>
+						</block>
+
+					</block>
+				</block>
+	            <block type="core/template" name="footer.copyright" template="bootstrap/grids/row-fluid.phtml">     
+				    <block type="core/template" name="footer.copyright.content" as="copyright" template="page/html/copyright.phtml"></block>
+				</block>
+				
+				<!--
+	            <block type="core/template" name="footer.sections" template="bootstrap/grids/row-fluid.phtml">     
+				    <block type="core/template" name="footer.sections.first_column" template="bootstrap/grids/span4.phtml">     
+						<block type="cms/block" name="about_us">
+							<action method="setBlockId"><block_id>footer_about_links</block_id></action>
+						</block>
+					</block>
+				    <block type="core/template" name="footer.sections.second_column" template="bootstrap/grids/span4.phtml">     
+						<block type="cms/block" name="your_order">
+							<action method="setBlockId"><block_id>footer_your_order</block_id></action>
+						</block>
+					</block>
+				    <block type="core/template" name="footer.sections.third_column" template="bootstrap/grids/span4.phtml">     
+						<block type="cms/block" name="contact_us">
+							<action method="setBlockId"><block_id>footer_contacts</block_id></action>
+						</block>
+					</block>
+				</block>
+	            <block type="core/template" name="footer.copyright" template="bootstrap/grids/row-fluid.phtml">     
+				    <block type="core/template" name="footer.copyright.content" as="copyright" template="page/html/copyright.phtml"></block>
+				</block>
+				-->
+
+				<!--
+				<block type="cms/block" name="about_us">
+					<action method="setBlockId"><block_id>footer_about_links</block_id></action>
+				</block>
+				<block type="cms/block" name="your_order">
+					<action method="setBlockId"><block_id>footer_your_order</block_id></action>
+				</block>
+				<block type="cms/block" name="contact_us">
+					<action method="setBlockId"><block_id>footer_contacts</block_id></action>
+				</block>
+				<block type="core/template" name="footer.copyright.content" as="copyright" template="page/html/copyright.phtml"></block>
+				-->
             </block>
 
             <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">

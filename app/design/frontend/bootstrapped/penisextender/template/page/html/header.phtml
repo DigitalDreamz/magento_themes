@@ -18,13 +18,8 @@
     <span class="icon-bar"></span>
 </a>
 <div class="nav-collapse">
-	<ul class="nav">
-	  <li><a class="brand" href="#">Nos autres sites:</a></li>
-	  <li><a href="#Abcircle.fr" class="active">Abcircle.fr</a></li>
-	  <li class="divider"></li>
-	  <li><a href="#Bestoftv.fr">Bestoftv.fr</a></li>
-	  <li><a href="#Shake-weight.fr">Shake-weight.fr</a></li>
-	</ul>
+
+    <?php echo $this->getChildHtml('sponsorLinks') ?>
     <?php echo $this->getChildHtml('topLinks') ?>
 <?php /*?>
     <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
