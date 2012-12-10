@@ -10,39 +10,42 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $this->getLang() ?>">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo $this->getLang() ?>"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="<?php echo $this->getLang() ?>"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?php echo $this->getLang() ?>n"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php echo $this->getLang() ?>"> <!--<![endif]-->
     <head>
         <?php echo $this->getChildHtml('head') ?>
     </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
-<?php echo $this->getChildHtml('after_body_start') ?>
-<div class="wrapper">
-                    
-    <div class="page">
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <?php echo $this->getChildHtml('header') ?>
-                </div>
-            </div>
-        </div>
-        <div class="container">                
-                    <header>
-                        <?php echo $this->getChildHtml('breadcrumbs') ?>
-                    </header>
-            <div class="row">
-                <div class="span3">
-                        <?php echo $this->getChildHtml('left') ?>
-                </div>
-                <div class="span9">
-                        <?php echo $this->getChildHtml('global_messages') ?>
-                        <?php echo $this->getChildHtml('content') ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        <footer class="footer">
+	<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+		<?php echo $this->getChildHtml('after_body_start') ?>
+		<div class="wrapper">
+				            
+			<div class="page">
+				<div class="navbar navbar-fixed-top">
+				    <div class="navbar-inner">
+				        <div class="container">
+				            <?php echo $this->getChildHtml('header') ?>
+				        </div>
+				    </div>
+				</div>
+				<div class="container">                
+				            <header>
+				                <?php echo $this->getChildHtml('breadcrumbs') ?>
+				            </header>
+				    <div class="row">
+				        <div class="span3">
+				                <?php echo $this->getChildHtml('left') ?>
+				        </div>
+				        <div class="span9">
+				                <?php echo $this->getChildHtml('global_messages') ?>
+				                <?php echo $this->getChildHtml('content') ?>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+        <footer class="footer well">
             <div class="container">
                 <?php echo $this->getChildHtml('footer') ?>
                 <?php echo $this->getChildHtml('global_notices') ?>
@@ -51,5 +54,5 @@
 
         <?php echo $this->getChildHtml('before_body_end') ?>
 
-</body>
+	</body>
 </html>

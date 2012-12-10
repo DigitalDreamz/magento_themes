@@ -10,7 +10,10 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $this->getLang() ?>">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo $this->getLang() ?>"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="<?php echo $this->getLang() ?>"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?php echo $this->getLang() ?>n"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php echo $this->getLang() ?>"> <!--<![endif]-->
     <head>
         <?php echo $this->getChildHtml('head') ?>
     </head>
@@ -48,7 +51,7 @@
 
             </div>
         </div>
-        <footer class="footer">
+        <footer class="footer well">
             <div class="container">
                 <?php echo $this->getChildHtml('footer') ?>
                 <?php echo $this->getChildHtml('global_notices') ?>
