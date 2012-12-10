@@ -1,0 +1,3 @@
+<?php echo $this->getChildHtml() ?>
+<p><?php echo preg_replace('/<STORENAME\/>/', Mage::app()->getStore()->getGroup()->getName(), preg_replace('/<YEAR\/>/', date("Y"), $this->getCopyright())) ?> <?php echo $this->__('Based on Bootstrap, ') ?><a rel="nofollow" href="http://twitter.github.com/bootstrap/" onclick="this.target='_blank'"><strong><?php echo $this->__('from Twitter') ?></strong></a> <?php echo $this->__('(Magento ver. %s)', Mage::getVersion()) ?></p>
+
