@@ -15,20 +15,42 @@
 <div id="myCarousel" class="carousel slide">
 	<!-- Carousel items -->
 	<div class="carousel-inner">
-		<?php $i = 0; foreach ($bannerCollection as $banner): $i++; ?>
-		<div id="tab<?php echo $i;?>" class="item<?php @$i?' active':'';?>" style="background: url('<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $banner['filename']?>') no-repeat;background-size:100%;height:200px;">
-			<a href="<?php echo $banner['weblink'];?>">
-			<h1><?php echo $banner['title']?></h1>				
-			<?php if ($showdesc == '1'):?>
-				<?php echo $banner['content']; ?>
-			<?php endif;?>
-			</a>
+		<?php $i = 0; foreach ($bannerCollection as $banner): ?>
+		<div id="tab<?php echo $i;?>" class="item<?php echo @$i++>0?'':' active';?>">
+			<div style="background: url('<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $banner['filename']?>') no-repeat;background-size:100%;height:410px;">
+				<h1><a href="<?php echo $banner['weblink'];?>"><?php echo $banner['title']?></a></h1>				
+				<?php if ($showdesc == '1'):?>
+					<?php echo $banner['description']; ?>
+				<?php endif;?>
+				<h2>Somewqsc assubtitle dvzsdzsczx</h2>
+				<ul>
+					<li>ASFdfb fsdgdv f</li>
+					<li>ASFdfb fsdgdv f</li>
+					<li>ASFdfb fsdgdv f</li>
+					<li>ASFdfb fsdgdv f</li>
+				</ul>
+				<a class="btn btn-primary">Commander le votre</a>
+			</div>
 		</div>
 		<?php endforeach; ?>
 	</div>
+	<!-- Shadow and navigation -->
+	<p class="carousel-nav">
+		<?php $i = 0; foreach ($bannerCollection as $banner): ?>
+		<a href="#tab<?php echo $i;?>" data-target="myCarousel" data-to="<?php echo $i++;?>">&#9632;</a>
+		<?php endforeach; ?>
+	</p>
 	<!-- Carousel nav -->
-	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	<a class="carousel-control left ui-prev" href="#myCarousel" data-slide="prev"><i class=""></i></a>
+	<a class="carousel-control right ui-next" href="#myCarousel" data-slide="next"><i class=""></i></a>
 </div>
+<script>
+jQuery(function($){
+	$('#myCarousel .carousel-nav a').click(function(){
+		$('#myCarousel').carousel($(this).data('to'));
+	});
+
+})
+</script>
 <?php endif;?>
 

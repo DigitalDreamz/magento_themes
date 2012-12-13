@@ -16,7 +16,7 @@
 ?>
 <?php $_links = $this->getLinks(); ?>
 <?php if(count($_links)>0): ?>
-<ul class="nav<?php echo $this->getIsTabs()?' nav-tabs':''; ?><?php echo $this->getIsStacked()?' nav-stacked':''; ?><?php echo $this->getIsPills()?'  nav-pills':''; ?><?php echo $this->getIsList()?' nav-list':''; ?>"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+<ul class="nav<?php echo $this->getIsTabs()?' nav-tabs':''; ?><?php echo $this->getIsStacked()?' nav-stacked':''; ?><?php echo $this->getIsPills()?'  nav-pills':''; ?><?php echo $this->getIsList()?' nav-list':''; ?><?php echo $this->getPull()?' pull-'.$this->getPull():''; ?>"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
 <?php if(@$this->getTitle()):?><li class="nav-header"><?php echo $this->__($this->getTitle()); ?></li><?php endif;?>
     <?php foreach($_links as $_link): ?>
         <?php if (@$_link->divider):?>
@@ -24,7 +24,13 @@
         <?php elseif ($_link instanceof Mage_Core_Block_Abstract):?>
             <?php echo $_link->toHtml() ?>
         <?php else: ?>
-            <li <?php echo $_link->getLiParams() ?>><?php echo $_link->getBeforeText() ?><a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?></li>
+            <li <?php echo $_link->getLiParams() ?>>
+            	<a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>>
+            		<?php $_beforeText = $_link->getBeforeText(); echo is_array($_beforeText)?'<i class="ui-'.@$_beforeText['icon'].'"></i>':$_beforeText ?>
+            		<?php echo $_link->getLabel() ?>
+            		<?php $_afterText = $_link->getAfterText(); echo is_array($_afterText)?'<i class="ui-'.@$_afterText['icon'].'"></i>':$_afterText ?>
+            	</a>
+            </li>
         <?php endif;?>
     <?php endforeach; ?>
 </ul>

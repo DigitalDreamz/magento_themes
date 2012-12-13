@@ -21,21 +21,14 @@
         <?php echo $this->getChildHtml('after_body_start') ?>
         <div class="wrapper">
             <div class="page">
-                <div class="navbar navbar-fixed-top">
-                    <div class="navbar-inner">
-                        <div class="container">
-                            <?php echo $this->getChildHtml('header') ?>
-
-                        </div>
-                    </div>
-                </div>
+                <?php echo $this->getChildHtml('header') ?>
 
                 <div class="container">
                     <header>
                         <?php echo $this->getChildHtml('breadcrumbs') ?>
                     </header>
-                                <?php echo $this->getChildHtml('global_messages') ?>
-                                <?php echo $this->getChildHtml('content') ?>
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
                 </div>
 
             </div>
