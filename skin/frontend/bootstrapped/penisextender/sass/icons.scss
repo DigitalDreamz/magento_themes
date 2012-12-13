@@ -1,0 +1,90 @@
+$ui-layout:smart;
+/* Smart layout will work only, when some larger image will also be placed with others uis. I use logo or some signature for that. */
+$ui-dimensions:true;
+$disable-magic-sprite-selectors:true;
+@import "compass/utilities/sprites";
+@import "compass/css3/opacity";
+@import "ui/*.png";
+
+*[class^="ui-"], *[class*=" ui-"]{
+    display:inline-block;
+    background: sprite($ui-sprites,ok) no-repeat;
+    vertical-align: middle;
+    margin: -.3em .5ex;
+    @include sprite-dimensions($ui-sprites, ok);
+    @include opacity(0.5);
+}
+.ui-next,.ui-prev{
+    @include sprite-dimensions($ui-sprites, next);
+}
+.ui-shopping-cart {
+    @include sprite-dimensions($ui-sprites, shopping-cart);
+    margin-bottom: 2px;
+}
+.ui-comments {
+    @include sprite-dimensions($ui-sprites, comments);
+}
+.ui-user {
+    @include sprite-dimensions($ui-sprites, user);
+    margin-bottom: 1px;
+}
+/*
+*[class*="ui-big-"]{
+    width: 32px;
+    height: 32px;
+}
+*[class*="ui-medium-"]{
+    width: 24px;
+    height: 24px;
+}
+*[class*="ui-small-"]{
+    width: 16px;
+    height: 16px;
+}
+*/
+@include all-ui-sprites;
+
+$inverted-ui-layout:smart;
+/* Smart layout will work only, when some larger image will also be placed with others inverted-uis. I use logo or some signature for that. */
+$inverted-ui-dimensions:true;
+$disable-magic-sprite-selectors:true;
+@import "compass/utilities/sprites";
+@import "inverted-ui/*.png";
+
+.inverted *[class^="ui-"], .inverted *[class*=" ui-"]{
+    display:inline-block;
+    background: sprite($inverted-ui-sprites,ok) no-repeat;
+    vertical-align: middle;
+    margin: -.3em .5ex;
+    @include sprite-dimensions($inverted-ui-sprites, ok);
+    @include opacity(1);
+}
+.inverted .ui-next,.inverted .ui-prev{
+    @include sprite-dimensions($inverted-ui-sprites, next);
+}
+.inverted .ui-shopping-cart {
+    @include sprite-dimensions($inverted-ui-sprites, shopping-cart);
+    margin-bottom: 2px;
+}
+.inverted .ui-comments {
+    @include sprite-dimensions($inverted-ui-sprites, comments);
+}
+.inverted .ui-user {
+    @include sprite-dimensions($inverted-ui-sprites, user);
+    margin-bottom: 1px;
+}
+/*
+*[class*="inverted-ui-big-"]{
+    width: 32px;
+    height: 32px;
+}
+*[class*="inverted-ui-medium-"]{
+    width: 24px;
+    height: 24px;
+}
+*[class*="inverted-ui-small-"]{
+    width: 16px;
+    height: 16px;
+}
+*/
+@include all-inverted-ui-sprites;
