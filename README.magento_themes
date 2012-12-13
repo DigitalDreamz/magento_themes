@@ -1,0 +1,24 @@
+Magento Themes
+==============
+
+Avaliable themes
+----------------
+
+| theme_bootstrapped
+| theme_penisextender
+
+Cloning
+-------
+
+<pre>
+	git clone git@gitlab.ddz.fr:magento_themes.git -b $theme_name $local_folder
+</pre>
+
+Add to existing project
+-----------------------
+
+<pre>
+	git remote add magento_themes git@gitlab.ddz.fr:magento_themes.git
+	...
+</pre>
+
