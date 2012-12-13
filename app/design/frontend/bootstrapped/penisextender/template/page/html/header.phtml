@@ -12,21 +12,31 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-</a>
-<div class="nav-collapse">
+<div class="navbar navbar-fixed-top inverted">
+    <div class="navbar-inner">
+        <div class="container">
 
-    <?php echo $this->getChildHtml('sponsorLinks') ?>
-    <?php echo $this->getChildHtml('topLinks') ?>
-<?php /*?>
-    <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-<?php */?>
-                
-    <?php echo $this->getChildHtml('topSearch') ?>
-</div><!--/.nav-collapse -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<div class="nav-collapse">
 
-<?php //echo $this->getChildHtml('topContainer'); ?>
-<?php //echo $this->getChildHtml('topMenu') ?>
+				<?php echo $this->getChildHtml('sponsorLinks') ?>
+				<?php echo $this->getChildHtml('topLinks') ?>
+			<?php /*?>
+				<p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+			<?php */?>
+						    
+				<?php echo $this->getChildHtml('topSearch') ?>
+			</div><!--/.nav-collapse -->
+
+			<?php //echo $this->getChildHtml('topContainer'); ?>
+			<?php //echo $this->getChildHtml('topMenu') ?>
+
+        </div>
+    </div>
+</div>
+<?php echo $this->getChildHtml('bannerslider') ?>
+

@@ -58,10 +58,10 @@ foreach( $_selections as $_selection){
         <?php endif; ?>
         <?php foreach ($_selections as $_selection): ?>
             <label class="btn-group radio <?php echo $_option->getRequired()?' required':''?>" for="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>">
-            	<div class="btn btn-big">
+            	<div class="btn">
 		        	<input type="radio" onclick="bundle.changeSelection(this)" <?php echo $_option->getRequired()?'required="required"':'' ?> id="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]"<?php if ($this->_isSelected($_selection)) echo ' checked="checked"' ?><?php if (!$_selection->isSaleable()) echo ' disabled="disabled"' ?>value="<?php echo $_selection->getSelectionId() ?>"/>
             	</div>
-            	<div class="btn btn-big">
+            	<div class="btn">
 		        	<?php if($_selection->getImage()):?>
 		    		<img src="<?php echo $_selection->getThumbnailUrl(100); ?>" alt="<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>"/>
 		        	<?php endif;?>
