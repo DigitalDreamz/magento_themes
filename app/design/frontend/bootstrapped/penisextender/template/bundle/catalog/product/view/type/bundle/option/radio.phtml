@@ -45,7 +45,6 @@ foreach( $_selections as $_selection){
 <?php list($_defaultQty, $_canChangeQty) = $this->_getDefaultValues(); ?>
 
 <label<?php if ($_option->getRequired()) echo ' class="required"' ?>><?php echo $this->htmlEscape($_option->getTitle()) ?><?php if ($_option->getRequired()) echo '<em>*</em>' ?></label>
-    <div class="input-box">
     <?php if ($this->_showSingle()): ?>
         <?php echo $this->getSelectionTitlePrice($_selections[0]) ?>
         <input type="hidden" name="bundle_option[<?php echo $_option->getId() ?>]" value="<?php echo $_selections[0]->getSelectionId() ?>" />
@@ -57,23 +56,19 @@ foreach( $_selections as $_selection){
             </label>
         <?php endif; ?>
         <?php foreach ($_selections as $_selection): ?>
-            <label class="btn-group radio <?php echo $_option->getRequired()?' required':''?>" for="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>">
-            	<div class="btn">
-		        	<input type="radio" onclick="bundle.changeSelection(this)" <?php echo $_option->getRequired()?'required="required"':'' ?> id="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]"<?php if ($this->_isSelected($_selection)) echo ' checked="checked"' ?><?php if (!$_selection->isSaleable()) echo ' disabled="disabled"' ?>value="<?php echo $_selection->getSelectionId() ?>"/>
-            	</div>
-            	<div class="btn">
-		        	<?php if($_selection->getImage()):?>
-		    		<img src="<?php echo $_selection->getThumbnailUrl(100); ?>" alt="<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>"/>
-		        	<?php endif;?>
-		        	<strong>
-		        		<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
-		        		<?php if($_section_price = $this->getSelectionPrice($_selection)):?>
-						<span class="price-notice">+<span class="price"><?php echo Mage::getModel('directory/currency')->format($_section_price)?></span></span>
-						<?php endif;?>
-		        	</strong>
-		    		<p><?php echo $_helper->productAttribute($_selection, $_selection->getName(), 'name') ?></p>
-		        	<?php //echo $this->getSelectionTitlePrice($_selection) ?>
-            	</div>
+            <label class="btn span12 radio <?php echo $_option->getRequired()?' required':''?>" for="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>">
+	        	<input type="radio" onclick="bundle.changeSelection(this)" <?php echo $_option->getRequired()?'required="required"':'' ?> id="bundle-option-<?php echo $_option->getId() ?>-<?php echo $_selection->getSelectionId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]"<?php if ($this->_isSelected($_selection)) echo ' checked="checked"' ?><?php if (!$_selection->isSaleable()) echo ' disabled="disabled"' ?>value="<?php echo $_selection->getSelectionId() ?>"/>
+	        	<?php if($_selection->getImage()):?>
+	    		<img src="<?php echo $_selection->getThumbnailUrl(100); ?>" alt="<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>"/>
+	        	<?php endif;?>
+	        	<strong>
+	        		<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+	        		<?php if($_section_price = $this->getSelectionPrice($_selection)):?>
+					<span class="price-notice">+<span class="price"><?php echo Mage::getModel('directory/currency')->format($_section_price)?></span></span>
+					<?php endif;?>
+	        	</strong>
+	    		<p><?php echo $_helper->productAttribute($_selection, $_selection->getName(), 'name') ?></p>
+	        	<?php //echo $this->getSelectionTitlePrice($_selection) ?>
             </label>
             <?php if ($_option->getRequired()): ?>
                 <?php echo $this->setValidationContainer('bundle-option-'.$_option->getId().'-'.$_selection->getSelectionId(), 'bundle-option-'.$_option->getId().'-container') ?>
@@ -82,7 +77,6 @@ foreach( $_selections as $_selection){
         </div>
         <div id="bundle-option-<?php echo $_option->getId() ?>-container"></div>
     <?php endif; ?>
-    </div>
     <?php if ($_canChangeQty):?>
     <span class="qty-holder">
         <label for="bundle-option-<?php echo $_option->getId() ?>-qty-input"><?php echo $this->__('Qty:') ?>&nbsp;</label><input onkeyup="bundle.changeOptionQty(this, event)" onblur="bundle.changeOptionQty(this, event)" <?php if (!$_canChangeQty) echo ' disabled="disabled"' ?> id="bundle-option-<?php echo $_option->getId() ?>-qty-input" class="input-text qty<?php if (!$_canChangeQty) echo ' qty-disabled' ?>" type="text" name="bundle_option_qty[<?php echo $_option->getId() ?>]" value="<?php echo $_defaultQty ?>"/>

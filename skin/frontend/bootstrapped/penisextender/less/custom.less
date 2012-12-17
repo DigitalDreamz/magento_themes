@@ -1,12 +1,14 @@
 /*!
  * @author Artūrs Jansons
  */
- .btn {
+.btn {
     color: white;
-    text-align: left;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, .5);
 }
 
+.product-options .btn{
+    text-align: left;
+}
 .product-options .radio img, .product-options .checkbox img {
     height: 100px;
     margin: -50px 5px;
@@ -14,12 +16,10 @@
     right: 0;
     top: 50%;
 }
-
-.product-options .radio input[type="radio"], .product-options .checkbox input[type="checkbox"] {
+.product-options .radio.btn input[type="radio"], .product-options .checkbox.btn input[type="checkbox"] {
     margin: 20px;
 }
-
-.product-options .radio strong, .product-options .checkbox strong {
+.product-options .radio.btn strong, .product-options .checkbox.btn strong {
     font-size: 140%;
     line-height: 21px;
 }
@@ -76,7 +76,7 @@
 }
 
 .product-options-bottom .shipping-price .price {
-    float: right ;
+    float: right;
     font-size: 50px ;
     font-weight: 700 ;
     padding-top: 10px;
