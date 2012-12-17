@@ -18,7 +18,6 @@
 // Grid system and page structure
 @import "scaffolding.less";
 @import "../../default/less/grid.less";
-@import "../../default/less/layouts.less";
 //@import "responsive.less"; // Responsive design
 
 // Base CSS
@@ -28,7 +27,7 @@
 @import "../../default/less/tables.less";
 
 // Components: common
-@import "../../default/less/sprites.less";
+@import "../../default/less/glyphicons.less";
 @import "../../default/less/dropdowns.less";
 @import "wells.less";
 @import "../../default/less/component-animations.less";
@@ -66,3 +65,26 @@
 @import "custom.less";
 @import "icons.less";
 
+/*/ Responsive
+// -------------------------------------------------------------
+
+// Responsive utility classes
+@import "responsive-utilities.less";
+
+
+// Media queries
+// ------------------
+
+// Large desktops
+@import "responsive-1200px-min.less";
+
+// Tablets to regular desktops
+@import "responsive-768px-979px.less";
+
+// Phones to portrait tablets and narrow desktops
+@import "responsive-767px-max.less";
+
+
+// Responsive navbar
+// From 979px and below, show a button to toggle navbar contents
+@import "responsive-navbar.less";
