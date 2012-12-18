@@ -21,6 +21,8 @@ Default layout, loads most of the pages
 	    	<action method="removeItem"><type>skin_css</type><name>css/easytabs.css</name></action>
 	    	<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>
 
+	    	<action method="removeItem"><type>skin_css</type><name>less/bootstrap.less</name></action>
+            <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
 	    	<!--action method="addItem"><type>skin_js</type><name>js/google-code-prettify/prettify.js</name></action-->
 			<!--action method="addCss"><stylesheet>js/google-code-prettify/prettify.css</stylesheet></action-->
     	</reference>
@@ -72,12 +74,12 @@ Default layout, loads most of the pages
 		    	</action>
 	            <remove name="checkout_cart_link"/>
 	            
-	            <block type="checkout/links" name="checkout_cart_link_custom">
+	            <block type="checkout/links" name="checkout_cart_link_custom" >
                     <!--action method="addCheckoutLink"></action-->
                     <!--action method="addCartLink"></action-->
                 </block>
 			</reference>
-			
+			<block type="checkout/cart_totals" name="top.cart.totals" as="topCart" template="checkout/cart/bage.phtml"/>
         </reference>
 
         <reference name="left">
