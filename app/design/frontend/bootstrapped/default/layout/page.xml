@@ -46,8 +46,53 @@ Default layout, loads most of the pages
                 <action method="addItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
                 <action method="addItem"><type>skin_js</type><name>js/ie6.js</name><params/><if>lt IE 7</if></action-->
 
-                <!--action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action-->
-                <action method="addCss"><stylesheet>less/bootstrap.less</stylesheet></action>
+                <action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
+                <!--action method="addCss"><stylesheet>less/bootstrap.less</stylesheet></action-->
+<!--                
+<action method="addCss"><stylesheet>less/mixins.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/reset.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/variables.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/scaffolding.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/grid.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/type.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/code.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/forms.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/tables.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/glyphicons.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/dropdowns.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/wells.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/component-animations.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/close.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/buttons.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/button-groups.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/alerts.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/navs.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/navbar.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/breadcrumbs.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/pagination.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/pager.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/modals.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/tooltip.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/popovers.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/thumbnails.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/media.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/labels-badges.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/progress-bars.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/accordion.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/carousel.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/hero-unit.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/utilities.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/custom.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/icons.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive-utilities.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive-1200px-min.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive-768px-979px.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive-767px-max.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive-navbar.less</stylesheet></action>
+<action method="addCss"><stylesheet>less/responsive-768px-min.less</stylesheet></action>
+           -->
+                
                 <action method="addJs"><script>less-1.3.1.min.js</script></action>
 
             </block>
