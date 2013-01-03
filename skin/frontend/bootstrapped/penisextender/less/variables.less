@@ -45,7 +45,7 @@
 
 @line-height-base:        20px;
 
-@headings-font-family:    inherit; // empty to use BS default, @font-family-base
+@headings-font-family:    "Trebuchet MS", Helvetica, sans-serif; // inherit; // empty to use BS default, @font-family-base
 @headings-font-weight:    bold;    // instead of browser default, bold
 
 
@@ -156,7 +156,9 @@
 @navbar-height:                    44px;
 @navbar-background-highlight:      @gray;
 @navbar-background:                darken(@navbar-background-highlight, 5%);
-@navbar-border:                    darken(@navbar-background, 12%);
+@navbar-border:                    darken(@navbar-background-highlight, 5%);
+@navbar-border-right:              darken(@navbar-background-highlight, 2%);
+@navbar-border-left:               darken(@navbar-background-highlight, 8%);
 
 @navbar-text:                      #777;
 @navbar-link-color:                @link-color;

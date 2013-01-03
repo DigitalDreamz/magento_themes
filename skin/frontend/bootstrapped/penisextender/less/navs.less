@@ -34,7 +34,6 @@
   font-weight: bold;
   line-height: @baseLineHeight;
   color: @grayLight;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
   text-transform: uppercase;
 }
 // Space them out when they follow another list item (link)
@@ -56,7 +55,6 @@
 .nav-list .nav-header {
   margin-left:  -15px;
   margin-right: -15px;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 .nav-list > li > a {
   padding: 3px 15px;
@@ -64,7 +62,6 @@
 .nav-list > .active > a,
 .nav-list > .active > a:hover {
   color: @linkColor;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
 }
 .nav-list [class^="icon-"],
 .nav-list [class*=" icon-"] {
@@ -93,7 +90,7 @@
 .nav-pills > li > a {
   padding-right: 12px;
   padding-left: 12px;
-  margin-right: 2px;
+  //margin-right: 2px;
   line-height: 14px; // keeps the overall height an even number
 }
 
@@ -116,9 +113,11 @@
   line-height: @baseLineHeight;
   color: @grayLight;
   //border: 1px solid transparent;
+  border-right: 1px solid @navbar-border-right;
+  border-left: 1px solid @navbar-border-left;
   //.border-radius(4px 4px 0 0);
   &:hover {
-    //border-color: @grayLighter @grayLighter #ddd;
+    //border-color: @navbar-border @navbar-border-right @navbar-border;
   }
 }
 // Active state, and it's :hover to override normal :hover
@@ -274,6 +273,8 @@
 }
 .tab-content {
   overflow: auto; // prevent content from running below tabs
+  background: url(../images/tab-bg.png) 0 50% no-repeat;
+  .beyond-horizontally(20px);
 }
 
 // Remove border on bottom, left, right

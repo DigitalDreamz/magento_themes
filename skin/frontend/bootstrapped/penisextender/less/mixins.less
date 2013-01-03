@@ -457,6 +457,66 @@
 // COMPONENT MIXINS
 // --------------------------------------------------
 
+// Endure the block beyond borders
+//--------------------------
+// Usually to add larger background;
+.beyond-top(@shift: 0) {
+	margin-top: -@shift;
+	padding-top: @shift;
+}
+.beyond-left(@shift: 0) {
+	margin-left: -@shift;
+	padding-left: @shift;
+}
+.beyond-bottom(@shift: 0) {
+	margin-bottom: -@shift;
+	padding-bottom: @shift;
+}
+.beyond-right(@shift: 0) {
+	margin-right: -@shift;
+	padding-right: @shift;
+}
+.beyond-horizontally(@shift: 0) {
+	.beyond-left(@shift);
+	.beyond-right(@shift);
+}
+.beyond-vertically(@shift: 0) {
+	.beyond-top(@shift);
+	.beyond-bottom(@shift);
+}
+.beyond(@shift: 0) {
+	margin: -@shift;
+	padding: @shift;
+}
+
+// Oval shadow;
+// -------------------------
+// 
+.oval-shadow(@height: 20px){
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1px;
+    border-top: rgba( 128, 128, 128, .2) solid 1px;
+    min-height: @height;
+	&:after {
+		content: ".";
+		@shadow: @height + 5px;
+		@shadow-height: @height / 2;
+		box-shadow: 0 5px @shadow black;
+		display: block;
+		width: 98%;
+		height: @shadow-height;
+		border-radius: 50%;
+		position: absolute;
+		z-index: -1;
+		top: -@shadow-height;
+		left: 1%;
+		color: transparent;
+		background: rgba(0, 0, 0, .3);
+	}
+}
+
 // Horizontal dividers
 // -------------------------
 // Dividers (basically an hr) within dropdowns and nav lists
