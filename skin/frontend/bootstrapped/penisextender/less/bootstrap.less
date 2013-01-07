@@ -5,21 +5,21 @@
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ * Designed and built with all the love in the world by @mdo and @fat.
  */
 
-// Penisextender v1.0.53
-// CSS Reset
-@import "../../default/less/reset.less";
+// Penisextender v1.1.0
 
 // Core variables and mixins
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
 
+// Reset
+@import "../../default/less/normalize.less";
+
 // Grid system and page structure
 @import "scaffolding.less";
 @import "../../default/less/grid.less";
-//@import "responsive.less"; // Responsive design
 
 // Base CSS
 @import "type.less";
@@ -47,18 +47,18 @@
 @import "../../default/less/pager.less";
 
 // Components: Popovers
-@import "../../default/less/modals.less";
+@import "modals.less";
 @import "../../default/less/tooltip.less";
 @import "../../default/less/popovers.less";
 
 // Components: Misc
 @import "../../default/less/thumbnails.less";
 @import "../../default/less/media.less";
-@import "../../default/less/labels-badges.less";
+@import "../../default/less/badges.less";
 @import "../../default/less/progress-bars.less";
 @import "../../default/less/accordion.less";
 @import "carousel.less";
-@import "../../default/less/hero-unit.less";
+@import "../../default/less/jumbotron.less";
 
 // Utility classes
 @import "../../default/less/utilities.less"; // Has to be last to override when necessary
