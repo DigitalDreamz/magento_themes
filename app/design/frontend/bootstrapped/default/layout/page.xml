@@ -21,7 +21,6 @@ Default layout, loads most of the pages
         <block type="page/html" name="root" output="toHtml" template="page/2columns-left.phtml">
 
             <block type="page/html_head" name="head" as="head">
-                <action method="addJs"><script>jquery/jquery-1.7.2.min.js</script></action>
                 <action method="addJs"><script>prototype/prototype.js</script></action>
                 <action method="addJs"><script>lib/ccard.js</script></action>
                 <action method="addJs"><script>prototype/validation.js</script></action>
@@ -147,8 +146,10 @@ Default layout, loads most of the pages
                 <label>Page Bottom</label>
 				<block type="page/html_head" name="foot" as="foot" template="page/html/foot.phtml">
 				 
+	                <action method="addJs"><script>jquery/jquery-1.7.1.min.js</script></action>
+
 					<!-- Bootstrap -->
-					<action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action>
+					<!--action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action-->
 					<action method="addItem"><type>skin_js</type><name>js/bootstrap-alert.js</name></action>
 					<action method="addItem"><type>skin_js</type><name>js/bootstrap-modal.js</name></action>
 					<action method="addItem"><type>skin_js</type><name>js/bootstrap-dropdown.js</name></action>
@@ -159,7 +160,7 @@ Default layout, loads most of the pages
 					<action method="addItem"><type>skin_js</type><name>js/bootstrap-button.js</name></action>
 					<action method="addItem"><type>skin_js</type><name>js/bootstrap-collapse.js</name></action>
 					<action method="addItem"><type>skin_js</type><name>js/bootstrap-carousel.js</name></action>
-					<action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action>
+					<!--action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action-->
 				 
 				</block>
             </block>
