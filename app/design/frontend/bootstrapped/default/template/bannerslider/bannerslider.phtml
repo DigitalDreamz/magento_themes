@@ -13,7 +13,7 @@
 
 <?php  $filter = new Mage_Widget_Model_Template_Filter(); ?>
 
-<div id="myCarousel" class="carousel slide">
+<div id="carousel<?php echo $listStyle?>" class="carousel slide">
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<?php $i = 0; foreach ($bannerCollection as $banner): ?>
@@ -34,8 +34,8 @@
 		<?php endforeach; ?>
 	</p>
 	<!-- Carousel nav -->
-	<a class="carousel-control left ui-prev" href="#myCarousel" data-slide="prev"><i class=""></i></a>
-	<a class="carousel-control right ui-next" href="#myCarousel" data-slide="next"><i class=""></i></a>
+	<a class="carousel-control left ui-prev" href="#carousel<?php echo $listStyle?>" data-slide="prev"><i class=""></i></a>
+	<a class="carousel-control right ui-next" href="#carousel<?php echo $listStyle?>" data-slide="next"><i class=""></i></a>
 </div>
 <?php endif;?>
 
