@@ -49,7 +49,9 @@ Default layout, loads most of the pages
 				<action method="addItem"><type>skin_js</type><name>js/bootstrap-collapse.js</name></action>
 				<action method="addItem"><type>skin_js</type><name>js/bootstrap-carousel.js</name></action>
 				<action method="addItem"><type>skin_js</type><name>js/bootstrap-typeahead.js</name></action>
-				<!--action method="addItem"><type>skin_js</type><name>js/application.js</name></action-->
+
+				<!-- Custom scripts -->
+				<action method="addItem"><type>skin_js</type><name>js/application.js</name></action>
 			 
 			</block>
         </reference>

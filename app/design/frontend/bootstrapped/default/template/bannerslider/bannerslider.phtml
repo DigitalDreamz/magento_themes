@@ -17,7 +17,7 @@
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<?php $i = 0; foreach ($bannerCollection as $banner): ?>
-		<div id="tab<?php echo $i;?>" class="item<?php echo @$i++>0?'':' active';?>">
+		<div class="item<?php echo @$i++>0?'':' active';?>">
 			<div style="background: url('<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $banner['filename']?>') no-repeat;height:450px;<?php //echo !@$imageheight?:'height:'.$imageheight.'px;'?>">
 				<h1><a href="<?php echo $banner['weblink'];?>"><?php echo $banner['title']?></a></h1>				
 				<?php if ($showdesc == '1'):?>
@@ -30,20 +30,12 @@
 	<!-- Shadow and navigation -->
 	<p class="carousel-nav">
 		<?php $i = 0; foreach ($bannerCollection as $banner): ?>
-		<a href="#tab<?php echo $i;?>" data-target="myCarousel" data-to="<?php echo $i++;?>">&#9632;</a>
+		<a data-target="myCarousel" data-to="<?php echo $i++;?>">&#9632;</a>
 		<?php endforeach; ?>
 	</p>
 	<!-- Carousel nav -->
 	<a class="carousel-control left ui-prev" href="#myCarousel" data-slide="prev"><i class=""></i></a>
 	<a class="carousel-control right ui-next" href="#myCarousel" data-slide="next"><i class=""></i></a>
 </div>
-<script>
-jQuery(function($){
-	$('#myCarousel .carousel-nav a').click(function(){
-		$('#myCarousel').carousel($(this).data('to'));
-	});
-
-})
-</script>
 <?php endif;?>
 
