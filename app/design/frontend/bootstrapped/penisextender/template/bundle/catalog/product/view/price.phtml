@@ -100,7 +100,15 @@ $canApplyMAP  = Mage::helper('catalog')->canApplyMsrp($_product);
 	<?php endif; ?>
 	</span>
 	<?php endif ?>
-    <p class="help-text">( <?php echo $this->helper('bundle')->__('Ecotaxe') ?>: 0.06 € )</p>
+	<div class="help-block">
+	    <p>( <?php echo $this->helper('bundle')->__('Ecotaxe') ?>: 0.06 € )</p>
+	</div>
 </div>
 <?php endif; ?>
-
+<?php if($_product->isSaleable()): ?>
+<script type="text/javascript">
+document.observe("dom:loaded", function() {
+    bundle.reloadPrice();
+});
+</script>
+<?php endif; ?>

@@ -19,12 +19,12 @@ Default layout, loads most of the pages
     <default>
     	<reference name="head">
 	    	<action method="removeItem"><type>skin_css</type><name>css/easytabs.css</name></action>
-	    	<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>
 
-	    	<action method="removeItem"><type>skin_css</type><name>less/bootstrap.less</name></action>
-            <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
+	    	<!--action method="removeItem"><type>skin_css</type><name>less/bootstrap.less</name></action>
+            <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action-->
 	    	<!--action method="addItem"><type>skin_js</type><name>js/google-code-prettify/prettify.js</name></action-->
 			<!--action method="addCss"><stylesheet>js/google-code-prettify/prettify.css</stylesheet></action-->
+			
     	</reference>
         <reference name="header">
             <remove name="top.search"/>
@@ -179,18 +179,24 @@ Default layout, loads most of the pages
             <remove name="product.info.options.wrapper.bottom" />
 			<remove name="product.info.addto" />
 			<remove name="product_tag_list" />
+			<remove name="product.info.bundle" />
+
         </reference>
 		<reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="product.info.additional">
-            <block type="catalog/product_view" name="product.info.options.bottom" as="product_options_bottom" template="catalog/product/view/options/wrapper/bottom.phtml" translate="label" before="-">
-                <label>Bottom Block Options Wrapper</label>
+            <block type="bundle/catalog_product_view_type_bundle" name="product.info.additional.data" as="additional_data" template="bundle/catalog/product/view/type/bundle.phtml" translate="label" before="-">
+                <label>Add to Cart and Prices</label>
+                <action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
                 <action method="insert"><block>product.tierprices</block></action>
-                <block type="catalog/product_view" name="product.clone_prices" as="prices" template="catalog/product/view/price_clone.phtml"/>
+                <block type="bundle/catalog_product_price" name="bundle.prices" as="bundle_prices" template="bundle/catalog/product/view/price.phtml">
+                    <action method="setMAPTemplate"><tmpl>catalog/product/price_msrp_item.phtml</tmpl></action>
+                </block>
                 <action method="append"><block>product.info.addtocart</block></action>
                 <action method="append"><block>product.info.addto</block></action>
             </block>
+            
         </reference>
 	</catalog_product_view>
 

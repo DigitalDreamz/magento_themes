@@ -14,8 +14,9 @@
 <?php /* @var $this Mage_Bundle_Block_Catalog_Product_View_Type_Bundle_Option_Radio */ ?>
 <?php $_option = $this->getOption(); ?>
 <?php $_selections  = $_option->getSelections(); ?>
+<?php $_first_selection = $_selections[0]?>
 <?php $_default     = $_option->getDefaultSelection(); ?>
-
+<?php /*
 <script>
 //<![CDATA[
 typeof config				!== 'undefined' || (config				= <?php echo $this->getJsonConfig()?:'[]' ?>);
@@ -24,9 +25,8 @@ typeof config.selected		!== 'undefined' || (config.selected		= []);
 typeof config.selections	!== 'undefined' || (config.selections	= []);
 
 <?php echo 'config.options['.$_option->getId().'] = '.$_option->toJson().";\n";?>
-<?php
-require_once "ChromePhp.php";
-require_once "debug.php";
+//require_once "ChromePhp.php";
+//require_once "debug.php";
 //console::log(get_class_info($_option));
 //console::log(JSON_decode($_option->toJson()));
 foreach( $_selections as $_selection){
@@ -34,15 +34,15 @@ foreach( $_selections as $_selection){
 	echo 'config.selections['.$_selection->getId().'] = '.$_selection->toJson().";\n";
 	if ($this->_isSelected($_selection)) echo 'config.selected['.$_option->getId().'] = true;';
 }
-?>
 //]]>
 </script>
+*/?>
+
+<?php list($_defaultQty, $_canChangeQty) = $this->_getDefaultValues(); ?>
 
 <?php // for Product title ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
-
-<?php list($_defaultQty, $_canChangeQty) = $this->_getDefaultValues(); ?>
 
 <label<?php if ($_option->getRequired()) echo ' class="required"' ?>><?php echo $this->htmlEscape($_option->getTitle()) ?><?php if ($_option->getRequired()) echo '<em>*</em>' ?></label>
     <?php if ($this->_showSingle()): ?>
@@ -63,8 +63,10 @@ foreach( $_selections as $_selection){
 	        	<?php endif;?>
 	        	<strong>
 	        		<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
-	        		<?php if($_section_price = $this->getSelectionPrice($_selection)):?>
-					<span class="price-notice">+<span class="price"><?php echo Mage::getModel('directory/currency')->format($_section_price)?></span></span>
+	        		<?php $_section_price = $this->getSelectionPrice($_selection)?>
+	        		<?php $_first_section_price = $this->getSelectionPrice($_first_selection)?>
+	        		<?php if($_difference = $_section_price - $_first_section_price):?>
+						<span class="price-notice">+<span class="price"><?php echo Mage::getModel('directory/currency')->format($_difference)?></span></span>
 					<?php endif;?>
 	        	</strong>
 	    		<p><?php echo $_helper->productAttribute($_selection, $_selection->getName(), 'name') ?></p>
