@@ -20,8 +20,7 @@
 <?php if ($this->canApplyMsrp()): ?>
     <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
 <?php else: ?>
-    <div class="nav bage bage-primary">
-    	<img src="<?php echo $this->getSkinUrl('images/ui/shopping-cart.png')?>">
-            <?php echo $this->renderTotals(); ?>
+    <div class="inverted nav bage bage-primary">
+		<a href="<?php echo $this->getUrl('checkout/cart'); ?>"><i class="ui-shopping-cart"></i><?php echo $this->renderTotals(); ?></a>
     </div>
 <?php endif; ?>

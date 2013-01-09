@@ -115,7 +115,7 @@
 <script type="text/javascript">
 var productAddToCartForm = new VarienForm('product_addtocart_form');
     productAddToCartForm.submit = function(button, url) {
-        if (this.validator && this.validator.validate()) {
+        //if (this.validator && this.validator.validate()) {
             var form = this.form;
             var oldUrl = form.action;
 
@@ -135,7 +135,7 @@ var productAddToCartForm = new VarienForm('product_addtocart_form');
             if (button && button != 'undefined') {
                 button.disabled = true;
             }
-        }
+        //}
     }.bind(productAddToCartForm);
 
     productAddToCartForm.submitLight = function(button, url){

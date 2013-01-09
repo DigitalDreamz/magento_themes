@@ -51,27 +51,37 @@ $disable-magic-sprite-selectors:true;
 @import "compass/utilities/sprites";
 @import "inverted-ui/*.png";
 
-.inverted *[class^="ui-"], .inverted *[class*=" ui-"]{
-    display:inline-block;
-    background: sprite($inverted-ui-sprites,ok) no-repeat;
-    vertical-align: middle;
-    margin: -.3em .5ex;
-    @include sprite-dimensions($inverted-ui-sprites, ok);
-    @include opacity(1);
-}
-.inverted .ui-next,.inverted .ui-prev{
-    @include sprite-dimensions($inverted-ui-sprites, next);
-}
-.inverted .ui-shopping-cart {
-    @include sprite-dimensions($inverted-ui-sprites, shopping-cart);
-    margin-bottom: 2px;
-}
-.inverted .ui-comments {
-    @include sprite-dimensions($inverted-ui-sprites, comments);
-}
-.inverted .ui-user {
-    @include sprite-dimensions($inverted-ui-sprites, user);
-    margin-bottom: 1px;
+.inverted {
+
+	*[class^="ui-"], *[class*=" ui-"]{
+		display:inline-block;
+		background: sprite($inverted-ui-sprites,ok) no-repeat;
+		vertical-align: middle;
+		margin: -.3em .5ex;
+		@include sprite-dimensions($inverted-ui-sprites, ok);
+		@include opacity(1);
+	}
+	.ui-next,.inverted .ui-prev{
+		@include sprite-dimensions($inverted-ui-sprites, next);
+	}
+	.ui-shopping-cart {
+		@include sprite-dimensions($inverted-ui-sprites, shopping-cart);
+		margin-bottom: 2px;
+	}
+	.ui-comments {
+		@include sprite-dimensions($inverted-ui-sprites, comments);
+	}
+	.ui-user {
+		@include sprite-dimensions($inverted-ui-sprites, user);
+		margin-bottom: 1px;
+	}
+	
+	.inverted {
+		*[class^="ui-"], *[class*=" ui-"] {
+			background-image: $ui-sprites;
+			@include opacity(0.5);
+		}
+	}
 }
 /*
 *[class*="inverted-ui-big-"]{
