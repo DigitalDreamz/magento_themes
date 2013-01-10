@@ -146,7 +146,7 @@ Default layout, loads most of the pages
                 <label>Page Bottom</label>
 				<block type="page/html_head" name="foot" as="foot" template="page/html/foot.phtml">
 				 
-	                <action method="addJs"><script>jquery/jquery-1.7.1.min.js</script></action>
+	                <action method="addJs"><script>libs/jquery/jquery-1.7.1.min.js</script></action>
 
 					<!-- Bootstrap -->
 					<!--action method="addItem"><type>skin_js</type><name>js/bootstrap-transition.js</name></action-->
