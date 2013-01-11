@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * RocketWeb
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   RocketWeb
+ * @package    RocketWeb_ProductVideo
+ * @copyright  Copyright (c) 2011 RocketWeb (http://rocketweb.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     RocketWeb
+ */
+
+Supported layout update handles (action):
+- catalog_product_view
+-->
+<layout version="0.1.0">
+
+<!--
+Adds video after thumbs
+-->
+	
+    <catalog_product_view translate="label">
+    	<reference name="content">
+    		<remove name="media_video"/>
+    	</reference>
+			<reference name="product.info.media">
+				<block type="productvideo/video" name="product.info.media.video.thumbnail" as="media_video_thumbnail" template="catalog/product/view/media/video/thumbnail.phtml" translate="label"/>
+				<block type="productvideo/video" name="product.info.media.video.preview" as="media_video_preview" template="catalog/product/view/media/video/preview.phtml"/>
+				<block type="productvideo/video" name="product.info.media.video" as="media_video1" template="catalog/product/view/media/video.phtml">
+					<block type="productvideo/video" name="product.info.media.video.thumbnail" as="media_video_thumbnail" template="catalog/product/view/media/video/thumbnail.phtml">
+						<action method="setData">
+							<name>quality</name>
+							<value>mqdefault</value>
+						</action>
+					</block>
+					<block type="productvideo/video" name="product.info.media.video.preview" as="media_video_preview" template="catalog/product/view/media/video/preview.phtml">
+						<action method="setData">
+							<name>quality</name>
+							<value>maxresdefault</value>
+						</action>
+					</block>
+				</block>
+				<block type="productvideo/video" name="product.info.media.video" as="media_video2" template="catalog/product/view/media/video.phtml">
+					<block type="productvideo/video" name="product.info.media.video.thumbnail" as="media_video_thumbnail" template="catalog/product/view/media/video/thumbnail.phtml">
+						<action method="setData">
+							<name>quality</name>
+							<value>default</value>
+						</action>
+					</block>
+					<block type="productvideo/video" name="product.info.media.video.preview" as="media_video_preview" template="catalog/product/view/media/video/preview.phtml">
+						<action method="setData">
+							<name>quality</name>
+							<value>maxresdefault</value>
+						</action>
+					</block>
+				</block>
+			</reference>
+    </catalog_product_view>
+
+</layout>

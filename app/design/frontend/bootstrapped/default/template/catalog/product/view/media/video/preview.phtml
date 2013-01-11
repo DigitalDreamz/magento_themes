@@ -1,0 +1,78 @@
+<?php
+/**
+ * RocketWeb
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   RocketWeb
+ * @package    RocketWeb_ProductVideo
+ * @copyright  Copyright (c) 2011 RocketWeb (http://rocketweb.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     RocketWeb
+ */
+
+/**
+ * Product video data template
+ *
+ * @see RocketWeb_ProductVideo_Block_Media
+ */
+?>
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('productvideo/data');
+?>
+<?php if ($_product->hasData('rw_video_code') && ($rw_code = $_product->getData('rw_video_code')) != ""):?>
+	<?php
+		$rw_title = ($_product->getData('rw_video_title') != "" ? $_product->getData('rw_video_title') : $_product->getName());
+		$rw_thumb_width = 480;//$this->getThumbWidth(); // DEPRICATED
+		$rw_thumb_height = 360;//$this->getThumbHeight(); // DEPRICATED
+		$rw_width = $this->getWidth();
+		$rw_height = $this->getHeight();
+
+		// YouTube thumbnail API http://img.youtube.com/vi/
+		// 0.jpg - auto (hq: 480x360)
+		// default.jpg, 1.jpg, 2.jpg, 3.jpg - 120x90
+		// mqdefault.jpg - 320x180
+		// hqdefault.jpg - 480x360
+		// maxresdefault.jpg - 1024x576
+		$rw_quality = "mqdefault";
+		$youtube_qualityies = json_decode('{
+			"0":null,
+			"1":{
+				"width":"120",
+				"height":"90"
+			},
+			"2":{
+				"width":"120",
+				"height":"90"
+			},
+			"3":{
+				"width":"120",
+				"height":"90"
+			},
+			"default":{
+				"width":"120",
+				"height":"90"
+			},
+			"mqdefault":{
+				"width":"320",
+				"height":"180"
+			},
+			"hqdefault":{
+				"width":"480",
+				"height":"360"
+			},
+			"maxresdefault":{
+				"width":"1024",
+				"height":"276"
+			}
+		}');//$this->getType();
+	?>
+	<iframe src="http://www.youtube.com/v/<?php echo $rw_code?>?fs=1&amp;hl=en_US" width="<?php echo @$youtube_qualityies->$rw_quality->width?>"
+	height="<?php echo @$youtube_qualityies->$rw_quality->height?>" style="max-width: 100%;max-height: 100%;width: 100%;height: <?php echo @$youtube_qualityies->$rw_quality->height?>px;border:0;overflow:none;"></iframe>
+<?php endif;?>

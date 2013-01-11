@@ -1,0 +1,66 @@
+<?php
+/**
+ * RocketWeb
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   RocketWeb
+ * @package    RocketWeb_ProductVideo
+ * @copyright  Copyright (c) 2011 RocketWeb (http://rocketweb.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     RocketWeb
+ */
+
+/**
+ * Product video data template
+ *
+ * @see RocketWeb_ProductVideo_Block_Media
+ */
+?>
+<?php
+/**
+ * RocketWeb
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   RocketWeb
+ * @package    RocketWeb_ProductVideo
+ * @copyright  Copyright (c) 2011 RocketWeb (http://rocketweb.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     RocketWeb
+ */
+
+/**
+ * Product video data template
+ *
+ * @see RocketWeb_ProductVideo_Block_Media
+ */
+?>
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('productvideo/data');
+?>
+<?php if ($_product->hasData('rw_video_code') && ($rw_code = $_product->getData('rw_video_code')) != ""):?>
+	<?php $rw_title = ($_product->getData('rw_video_title') != "" ? $_product->getData('rw_video_title') : $_product->getName());?>
+
+    <?php echo $this->getChildHtml('media_video_thumbnail') ?>
+    <div class="modal fade" id="rw-product-video-<?php echo $rw_code?>">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3><?php echo $this->htmlEscape($rw_title) ?></h3>
+		</div>
+		<div class="modal-body">
+		    <?php echo $this->getChildHtml('media_video_preview') ?>
+	    </div>
+	</div>
+<?php endif;?>
