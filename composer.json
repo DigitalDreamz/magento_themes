@@ -1,0 +1,7 @@
+{
+    "name": "ddz/magento_themes",
+    "require": {
+        "php": ">=5.3.0",
+		"magento/community-edition": "dev-master"
+    }
+}
