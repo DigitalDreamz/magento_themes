@@ -1,0 +1,32 @@
+@media (min-width:767px){
+	a{
+		text-shadow:0 0.1em 0.1em rgba(0, 0, 0, 0.5);
+		&:hover,&:active{
+			text-shadow:0 0.1em 0.05em rgba(0, 0, 0, 0.2);
+		}
+		&:focus,&.focused{
+			text-shadow:0 0.1em 0.05em rgba(128, 128, 128, 0.2);
+		}
+	}
+	.btn{
+		text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);
+		&:hover,&:active{
+			text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
+		}
+		&.btn-big{
+			text-shadow:none;
+		}
+	}
+	.navbar-fixed-top .navbar-inner,.navbar-static-top .navbar-inner{
+		-webkit-box-shadow:0 1px 10px rgba(0,0,0,1);
+		box-shadow:0 1px 10px rgba(0,0,0,1);
+	}
+	.navbar-fixed-bottom{
+		bottom:0;
+		.navbar-inner{
+			-webkit-box-shadow:0 -1px 10px rgba(0,0,0,1);
+			box-shadow:0 -1px 10px rgba(0,0,0,1);
+		}
+	}
+	
+}
