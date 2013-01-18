@@ -106,13 +106,13 @@ Default layout, loads most of the pages
 	        <remove name="bottom.container"/>
 	        <remove name="store_switcher"/>
 	        <remove name="footer_links"/>
-	        <block type="core/template" name="footer.sections" template="bootstrap/grids/row-fluid.phtml">     
+	        <block type="core/template" name="footer.sections" template="page/html/footer.phtml">     
 				<block type="core/template" name="footer.sections.first_column" template="bootstrap/grids/span4.phtml">     
 				    <!--block type="page/template_links" name="footer_links" template="page/template/links.phtml" >
 						<action method="setTitle"><title>About</title></action>
 						<action method="setIsList"><is_list>true</is_list></action>
 					</block-->
-				    <block type="page/template_links" name="your_order" template="page/template/links.phtml" >
+				    <block type="page/template_links" name="about_us" template="page/template/links.phtml" >
 						<action method="setTitle"><title>A propos</title></action>
 						<!--action method="setIsTabs"><is_tabs>true</is_tabs></action-->
 						<!--action method="setIsStacked"><is_stacked>true</is_stacked></action-->
