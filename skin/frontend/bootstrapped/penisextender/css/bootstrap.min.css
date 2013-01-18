@@ -752,6 +752,7 @@ a.badge:hover{color:#fff;text-decoration:none;cursor:pointer;}
 .invisible{visibility:hidden;}
 .text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
 .affix{position:fixed;}
+img{max-width:100%;}
 .btn{color:white;}
 .btn.radio,.btn.checkbox{text-align:left;margin-bottom:1em;}
 .product-options .radio img,.product-options .checkbox img{height:100px;margin:-50px 5px;position:absolute;right:0;top:50%;}
@@ -808,4 +809,4 @@ h2{font-size:18px;color:white;}
 .inverted .ui-prev{background-position:0 -128px;}
 .inverted .ui-shopping-cart{background-position:0 -38px;}
 .inverted .ui-user{background-position:-15px -23px;}
-@media (min-width:767px){a{text-shadow:0 0.1em 0.1em rgba(0, 0, 0, 0.5);}a:hover,a:active{text-shadow:0 0.1em 0.05em rgba(0, 0, 0, 0.2);} a:focus,a.focused{text-shadow:0 0.1em 0.05em rgba(128, 128, 128, 0.2);} .btn{text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);}.btn:hover,.btn:active{text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);} .btn.btn-big{text-shadow:none;} .navbar-fixed-top .navbar-inner,.navbar-static-top .navbar-inner{-webkit-box-shadow:0 1px 10px rgba(0,0,0,1);box-shadow:0 1px 10px rgba(0,0,0,1);} .navbar-fixed-bottom{bottom:0;}.navbar-fixed-bottom .navbar-inner{-webkit-box-shadow:0 -1px 10px rgba(0,0,0,1);box-shadow:0 -1px 10px rgba(0,0,0,1);}}
+@media (min-width:767px){a{text-shadow:0 0.1em 0.1em rgba(0, 0, 0, 0.5);}a:hover,a:active{text-shadow:0 0.1em 0.05em rgba(0, 0, 0, 0.2);} a:focus,a.focused{text-shadow:0 0.1em 0.05em rgba(128, 128, 128, 0.2);} .btn{text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);}.btn:hover,.btn:active{text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);} .btn.btn-big{text-shadow:none;} .navbar-fixed-top .navbar-inner,.navbar-static-top .navbar-inner{-webkit-box-shadow:0 1px 10px #000000;box-shadow:0 1px 10px #000000;} .navbar-fixed-bottom{bottom:0;}.navbar-fixed-bottom .navbar-inner{-webkit-box-shadow:0 -1px 10px #000000;box-shadow:0 -1px 10px #000000;}}
