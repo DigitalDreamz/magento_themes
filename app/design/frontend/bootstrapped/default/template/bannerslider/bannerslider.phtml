@@ -19,7 +19,6 @@
 		<?php $i = 0; foreach ($bannerCollection as $banner): ?>
 		<div class="item<?php echo @$i++>0?'':' active';?>">
 			<div style="background: url('<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $banner['filename']?>') no-repeat;height:450px;<?php //echo !@$imageheight?:'height:'.$imageheight.'px;'?>">
-				<h1><a href="<?php echo $banner['weblink'];?>"><?php echo $banner['title']?></a></h1>				
 				<?php if ($showdesc == '1'):?>
 					<?php echo $filter->filter($banner['description']); ?>
 				<?php endif;?>
