@@ -10,18 +10,7 @@
  */
 ?>
 <div class="row-fluid">
-	<div class="span4">
-		<h5><?php echo $this->__('About us');?></h5>
-		<?php echo $this->getChildHtml('about_us');?>
-	</div>
-	<div class="span4">
-		<h5><?php echo $this->__('Your order');?></h5>
-		<?php echo $this->getChildHtml('your_order');?>
-	</div>
-	<div class="span4">
-		<h5><?php echo $this->__('Contact us');?></h5>
-		<?php echo $this->getChildHtml('contact_us');?>
-	</div>
+	<?php echo $this->getChildHtml();?>
 </div>
 <div class="row-fluid">
 	<div class="span12">

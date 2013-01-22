@@ -107,7 +107,7 @@ Default layout, loads most of the pages
 	        <remove name="store_switcher"/>
 	        <remove name="footer_links"/>
 	        <block type="core/template" name="footer.sections" template="page/html/footer.phtml">     
-				<block type="core/template" name="footer.sections.first_column" template="bootstrap/grids/span4.phtml">     
+				<block type="core/template" name="footer.sections.first_column" template="page/template/grids/span4.phtml">     
 				    <!--block type="page/template_links" name="footer_links" template="page/template/links.phtml" >
 						<action method="setTitle"><title>About</title></action>
 						<action method="setIsList"><is_list>true</is_list></action>
@@ -121,7 +121,7 @@ Default layout, loads most of the pages
 						<action method="addLink"><title>Notre ethique</title><url></url></action>
 					</block>
 				</block>
-				<block type="core/template" name="footer.sections.second_column" template="bootstrap/grids/span4.phtml">     
+				<block type="core/template" name="footer.sections.second_column" template="page/template/grids/span4.phtml">     
 				    <block type="page/template_links" name="your_order" template="page/template/links.phtml" >
 						<action method="setTitle"><title>Votre commande</title></action>
 						<action method="setIsList"><is_list>true</is_list></action>
@@ -129,7 +129,7 @@ Default layout, loads most of the pages
 						<action method="addLink"><title>Nos CGV</title><url></url></action>
 					</block>
 				</block>
-				<block type="core/template" name="footer.sections.third_column" template="bootstrap/grids/span4.phtml">     
+				<block type="core/template" name="footer.sections.third_column" template="page/template/grids/span4.phtml">     
 				    <!--block type="page/template_links" name="contact_us" template="page/template/links.phtml" >
 						<action method="setTitle"><title>Contactez-nous</title></action>
 						<action method="setIsList"><is_list>true</is_list></action>
