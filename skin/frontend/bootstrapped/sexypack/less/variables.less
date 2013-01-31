@@ -16,16 +16,17 @@
 @grayLighter:           #eee;
 
 // Used colors for theme
+@transparent:           rgba(0,0,0,0);
 @Black:                 #111;
 @White:					#fff;
-@darkPurple:            #361b39;
+@Purple:                #361b39;
 @Magenta:				#e53083;
 @Yellow:				#ffd131;
 @Orange:				#f19727;
 
 // Scaffolding
 // -------------------------
-@body-background:        @darkPurple;
+@body-background:        @Purple;
 @body-background-image:  url('../../sexypack/images/roses.png');
 @text-color:             @White;
 
@@ -67,30 +68,30 @@
   font-style: normal;
   font-weight: bold;
   src: local('Abel Bold'),
-    url('../fonts/Abel/Abel-Bold.eot?#') format('embedded-opentype'),
-    url('../fonts/Abel/Abel-Bold.woff') format('woff'),
-    url('../fonts/Abel/Abel-Bold.ttf') format('truetype'),
-    url('../fonts/Abel/Abel-Bold.svg#Abel-Bold') format('svg');
+    url('../../penisextender/fonts/Abel/Abel-Bold.eot?#') format('embedded-opentype'),
+    url('../../penisextender/fonts/Abel/Abel-Bold.woff') format('woff'),
+    url('../../penisextender/fonts/Abel/Abel-Bold.ttf') format('truetype'),
+    url('../../penisextender/fonts/Abel/Abel-Bold.svg#Abel-Bold') format('svg');
 }
 @font-face {
   font-family: 'Abel';
   font-style: normal;
   font-weight: normal;
   src: local('Abel Regular'),
-    url('../fonts/Abel/Abel-Regular.eot?#') format('embedded-opentype'),
-    url('../fonts/Abel/Abel-Regular.woff') format('woff'),
-    url('../fonts/Abel/Abel-Regular.ttf') format('truetype'),
-    url('../fonts/Abel/Abel-Regular.svg#Abel-Regular') format('svg');
+    url('../../penisextender/fonts/Abel/Abel-Regular.eot?#') format('embedded-opentype'),
+    url('../../penisextender/fonts/Abel/Abel-Regular.woff') format('woff'),
+    url('../../penisextender/fonts/Abel/Abel-Regular.ttf') format('truetype'),
+    url('../../penisextender/fonts/Abel/Abel-Regular.svg#Abel-Regular') format('svg');
 }
     
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Verdana, Geneva, sans-serif;
 @font-family-serif:       Boton, Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 @font-famely-abel:        Abel, Helvetica, Arial, sans-serif;
 
 @font-size-base:          14px;
-@font-size-large:         @font-size-base * 1.25; // ~18px
+@font-size-large:         40px; // ~18px
 @font-size-small:         @font-size-base * 0.85; // ~12px
 @font-size-mini:          @font-size-base * 0.75; // ~11px
 
@@ -105,7 +106,7 @@
 // Based on 14px font-size and 1.5 line-height
 
 
-@padding-large:           11px 19px; // 44px
+@padding-large:           15px 19px; // 44px
 @padding-small:           2px 10px;  // 26px
 @padding-mini:            0 6px;   // 22px
 
@@ -124,8 +125,8 @@
 
 // Buttons
 // -------------------------
-@btn-background:                     @grayLight;
-@btn-background-highlight:           darken(@grayLight, 10%);
+@btn-background:                     @Magenta;
+@btn-background-highlight:           @White;
 @btn-border:                         #bbb;
 
 @btn-background-primary:              @Yellow;
@@ -143,8 +144,8 @@
 @btn-background-danger:               #ee5f5b;
 @btn-background-danger-highlight:     #bd362f;
 
-@btn-background-inverse:              @btn-background-primary;
-@btn-background-inverse-highlight:    @grayDarker;
+@btn-background-inverse:              @Purple;
+@btn-background-inverse-highlight:    @Purple;
 
 
 // Forms
@@ -205,13 +206,13 @@
 @navbar-collapse-width-desktop:    @navbar-collapse-width + 1;
 
 @navbar-height:                    44px;
-@navbar-background-highlight:      @gray;
-@navbar-background:                darken(@navbar-background-highlight, 5%);
+@navbar-background-highlight:      @btn-background;
+@navbar-background:                @transparent;
 @navbar-border:                    darken(@navbar-background-highlight, 5%);
 @navbar-border-right:              darken(@navbar-background-highlight, 2%);
 @navbar-border-left:               darken(@navbar-background-highlight, 8%);
 
-@navbar-text:                      #777;
+@navbar-text:                      @text-color;
 @navbar-link-color:                @link-color;
 @navbar-link-color-hover:          @link-color-hover;
 @navbar-link-color-active:         @link-color-hover;
@@ -221,7 +222,7 @@
 @navbar-brand-color:               @navbar-link-color;
 
 // Inverted navbar
-@navbar-inverse-background:                #111111;
+@navbar-inverse-background:                @Purple;
 @navbar-inverse-background-highlight:      #222222;
 @navbar-inverse-border:                    #252525;
 
@@ -302,7 +303,7 @@
 @component-offset-horizontal:   180px;
 
 // Wells
-@well-background:               @darkPurple;
+@well-background:               @Purple;
 
 
 

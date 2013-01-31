@@ -49,15 +49,13 @@ a {
     text-shadow: none;
 }
 
-.nav-list > li > a, .nav-list > li > p {
-    color: inherit;
-}
-
 .nav-list {
     padding-left: 0;
     padding-right: 0;
 }
-
+.nav-list a {
+	color: @Magenta;
+}
 .footer .nav-header {
     font-size: 22px;
     color: white;
@@ -68,18 +66,12 @@ a {
     text-shadow: none;
 }
 
-.nav > li > a:hover {
-    background-color: inherit;
-    color: white;
-}
-
 .more-views > a img {
     background-color: #151515;
     padding: 10px;
 }
 
 .product-options-bottom .shipping-price {
-    padding-left: 80px;
     position: relative;
     display: block;
     margin-bottom: 0;
@@ -88,33 +80,50 @@ a {
     color: @Magenta;
     background: transparent;
     border: 0;
+    padding:0;
 }
-
+.product-options-bottom .shipping-price img{
+	float:left;
+}
 .product-options-bottom .shipping-price .price {
     float: right;
-    font-size: 50px ;
-    font-weight: 700 ;
-    padding-top: 10px;
-}
+    font-family: @font-family-sans-serif;
+    font-weight: bold;
+    background-image: url(../../sexypack/images/price-bg.png);
+    background-repeat: no-repeat;
+    display: block;
+    color: @White;
+    text-align: center;
+    vertical-align: middle;
 
-.product-options-bottom .shipping-price .price small {
-    font-size: 24px;
+	font-size: 34px;
+    padding: 30px 10px 1px;
+	width: 86px;
+	height: 72px;
+
+	margin-top: -24px;
+	position: absolute;
+	right: 0;
+	small {	
+		font-size: 50%;
+	}
 }
 
 .product-options-bottom .shipping-price strong {
-    font-size: 24px ;
+    font-size: 27px ;
     text-transform: uppercase;
-    letter-spacing: -.15ex;
-    font-weight: 700 ;
+    font-weight: bold;
     display: block;
+    padding-top: 5px;
 }
 
 .product-options-bottom .shipping-price em {
-    font-size: 18px ;
+    font-size: 25px ;
     text-transform: uppercase;
-    letter-spacing: -.15ex;
+    letter-spacing: -0.05em;
     font-style: normal;
     display: block;
+    line-height: 1;
 }
 
 .product-options-bottom .help-block {
@@ -122,49 +131,31 @@ a {
     font-style: italic;
 }
 
-.product-options-bottom .shipping-price img {
-    position: absolute;
-    left: -24px;
-    top: -24px;
-}
-
 .btn.btn-primary {
-	letter-spacing: -0.15ex;
-	text-transform: uppercase;
-	//background: #151515;
-	//color: darken(@btnPrimaryBackground, 10%);
 	color: rgba(0, 0, 0, .05);
 }
-.btn.btn-big {
-	font-size: 40px;
-	font-weight: 700;
-	line-height: 48px;
+.btn.btn-large {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, .5),1px 0 0 rgba(255, 255, 255, .5);
-
 }
+
 .btn{
 	text-align: center;
 }
 .full-product-price .price {
     font-size: 38px;
-    color: white;
+    color: @Yellow;
     font-weight: 700;
     padding: 20px 0;
     display: block;
     text-align: center;
 }
 
-h1 {
-    font-size: 50px;
-    font-weight: bold;
-    font-family: @font-family-serif;
-	color: @Magenta;
+h2 {
 	text-transform: uppercase;
 	letter-spacing: -1px;
 }
 
-h2 {
-    font-family: @font-family-serif;
+h3 {
     font-weight: normal;
     font-size: 34px;
 	text-transform: uppercase;
@@ -182,10 +173,23 @@ h2 {
 	position: absolute;
 	left: 100%;
 	margin-left: -58px;
-	padding-top: 1em;
-	color: #ccc;
+	padding: 1em;
+	background-color: @Orange;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	color: @gray;
+	font-weight: bold;
 }
 
 h4 {
 color: #fff;
 }
+.add-to-cart .btn.btn-primary {
+	width: 100%;
+}
+.product-options > label, #description_tabbed strong, #description_tabbed b{
+	color: @Magenta;
+	font-size: 16px;
+	padding: 2em 0 .3em;
+}
+

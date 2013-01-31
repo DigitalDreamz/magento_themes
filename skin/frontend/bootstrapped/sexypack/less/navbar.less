@@ -20,11 +20,13 @@
 // Inner for background effects
 // Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {
-  min-height: @navbarHeight;
+  min-height: @navbar-height;
   //padding-left:  20px;
   //padding-right: 20px;
-  //#gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
-  border: 1px solid @navbarBorder;
+  //#gradient > .vertical(@navbar-background-highlight, @navbar-background);
+  //border: 1px solid @navbarBorder;
+  //background: linear-gradient(0,rgba(128, 128, 128, .5) 75%,transparent 25%);
+  background-size: 3px 100%;
   .border-radius(@baseBorderRadius);
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
 
@@ -33,6 +35,8 @@
 }
 .navbar-inner.nav-tabs {
 	margin-bottom: 0;
+	background: -webkit-linear-gradient(0, rgba(128, 128, 128, .5) 75%, transparent 25%);
+    background-size: 3px 100%;
 }
 // Set width to auto for default container
 // We then reset it for fixed navbars in the #gridSystem mixin
@@ -175,6 +179,7 @@
 .navbar-fixed-top .navbar-inner,
 .navbar-static-top .navbar-inner {
   border-width: 0 0 1px;
+  background-color: @Purple;
 }
 .navbar-fixed-bottom .navbar-inner {
   border-width: 1px 0 0;
@@ -220,13 +225,16 @@
 }
 .navbar .nav > li {
   float: left;
+  border-right: @gray dashed 1px;
 }
 
+.navbar .nav > li.nav-header, .navbar .nav > li > a {
+  padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
+}
 // Links
 .navbar .nav > li > a {
   float: none;
   // Vertically center the text given @navbarHeight
-  padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
   color: @navbarLinkColor;
   text-decoration: none;
 }
