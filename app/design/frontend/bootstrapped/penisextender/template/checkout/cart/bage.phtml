@@ -24,15 +24,13 @@
 	$subTotal = Mage::getModel('checkout/cart')->getQuote()->getSubtotal();
 	$grandTotal = Mage::getModel('checkout/cart')->getQuote()->getGrandTotal();
 ?>
+<?php if(@$totalItems):?>
     <div class="inverted nav bage bage-primary">
-		<a href="<?php echo $this->getUrl('checkout/cart'); ?>"><i class="ui-shopping-cart"></i>
+		<a href="<?php echo $this->getUrl('checkout/cart'); ?>"><i class="ui-shopping-cart"></i><br/>
 		<?php //$this->helper('tax')->displayFullSummary()?>
 		<?php //echo $this->renderTotals(); ?>
 		(<?php //echo $this->helper('core')->formatPrice($subTotal, false)?><?php echo $totalItems?>)
 		</a>
     </div>
-<?php //endif;?>
-
-
-
+<?php endif;?>
 
