@@ -33,13 +33,36 @@
 // Typography
 // -------------------------
 
+// Abel
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Abel Bold'),
+    url('../fonts/Abel/Abel-Bold.eot?#') format('embedded-opentype'),
+    url('../fonts/Abel/Abel-Bold.woff') format('woff'),
+    url('../fonts/Abel/Abel-Bold.ttf') format('truetype'),
+    url('../fonts/Abel/Abel-Bold.svg#Abel-Bold') format('svg');
+}
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Abel Regular'),
+    url('../fonts/Abel/Abel-Regular.eot?#') format('embedded-opentype'),
+    url('../fonts/Abel/Abel-Regular.woff') format('woff'),
+    url('../fonts/Abel/Abel-Regular.ttf') format('truetype'),
+    url('../fonts/Abel/Abel-Regular.svg#Abel-Regular') format('svg');
+}
+
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
+@font-famely-abel:        Abel, Helvetica, Arial, sans-serif;
 
 @font-size-base:          14px;
-@font-size-large:         @font-size-base * 1.25; // ~18px
+@font-size-large:         40px; // ~18px
 @font-size-small:         @font-size-base * 0.85; // ~12px
 @font-size-mini:          @font-size-base * 0.75; // ~11px
 
@@ -54,7 +77,7 @@
 // Based on 14px font-size and 1.5 line-height
 
 
-@padding-large:           11px 19px; // 44px
+@padding-large:           15px 19px; // 44px
 @padding-small:           2px 10px;  // 26px
 @padding-mini:            0 6px;   // 22px
 

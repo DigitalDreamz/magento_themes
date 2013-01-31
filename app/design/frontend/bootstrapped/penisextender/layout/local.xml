@@ -24,7 +24,6 @@ Default layout, loads most of the pages
             <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action-->
 	    	<!--action method="addItem"><type>skin_js</type><name>js/google-code-prettify/prettify.js</name></action-->
 			<!--action method="addCss"><stylesheet>js/google-code-prettify/prettify.css</stylesheet></action-->
-			
     	</reference>
         <reference name="header">
             <remove name="top.search"/>
@@ -36,7 +35,6 @@ Default layout, loads most of the pages
 				<!--action method="setIsStacked"><is_stacked>true</is_stacked></action-->
 				<action method="setIsPills"><is_list>true</is_list></action>
 				<action method="addLink"><title>Abcircle.fr</title><url></url></action>
-				<action method="addLink"><divider/></action>
 				<action method="addLink"><title>Bestoftv.fr</title><url></url></action>
 				<action method="addLink"><title>Shake-weight.fr</title><url></url></action>
 			</block>
@@ -153,6 +151,7 @@ Default layout, loads most of the pages
         </reference>
         <reference name="foot">
 	        <action method="addItem"><type>skin_js</type><name>js/application.js</name></action>
+			<action method="addItem"><type>external_js</type><name>http://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js</name></action>
         </reference>
     </default>
 

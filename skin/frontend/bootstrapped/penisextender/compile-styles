@@ -5,6 +5,8 @@
 # FIXME: remove first rule of each sprite (replace with shorter string '*[class*="sprite-"],*[class*=" sprite-"]{}')
 compass compile -s compressed --force --no-line-comments && f="css/icons.css";cat $f | sed -r 's/-s[a-z0-9]{10}\./\./g;s/\.\w+_active/.active/g;s/\.\w+\-active/-active/g;s/\.inverted-ui/\.inverted .ui/g' > $f.tmp && cp $f.tmp $f && mv $f.tmp less/icons.less
 
+rm css/icons.css .tmp
+
 #cd images/inverted
 #compass compile -s compressed --force --no-line-comments && f="css/icons.css";cat $f | sed -r 's/-s[a-z0-9]{10}\./\./g;s/\.\w+_active/.active/g;s/\.\w+\-active/-active/g;s/\.ui/.inverted .ui/g' > $f.tmp && cp $f.tmp ../../css/inverted-icons.css && mv $f.tmp ../../less/inverted-icons.less && cp images/ui.png ../../images/inverted-ui.png
 #cd ../../

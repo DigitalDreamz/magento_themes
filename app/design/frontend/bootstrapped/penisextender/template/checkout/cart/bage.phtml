@@ -17,10 +17,22 @@
  * @var $this Mage_Checkout_Block_Cart_Totals
  */
 ?>
-<?php if ($this->canApplyMsrp()): ?>
-    <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
-<?php else: ?>
+<?php //if ($this->helper('tax')->displayFullSummary() && $_value!=0): 
+	$totalItems = Mage::getModel('checkout/cart')->getQuote()->getItemsCount();
+	$totalQuantity = Mage::getModel('checkout/cart')->getQuote()->getItemsQty();
+
+	$subTotal = Mage::getModel('checkout/cart')->getQuote()->getSubtotal();
+	$grandTotal = Mage::getModel('checkout/cart')->getQuote()->getGrandTotal();
+?>
     <div class="inverted nav bage bage-primary">
-		<a href="<?php echo $this->getUrl('checkout/cart'); ?>"><i class="ui-shopping-cart"></i><?php echo $this->renderTotals(); ?></a>
+		<a href="<?php echo $this->getUrl('checkout/cart'); ?>"><i class="ui-shopping-cart"></i>
+		<?php //$this->helper('tax')->displayFullSummary()?>
+		<?php //echo $this->renderTotals(); ?>
+		(<?php //echo $this->helper('core')->formatPrice($subTotal, false)?><?php echo $totalItems?>)
+		</a>
     </div>
-<?php endif; ?>
+<?php //endif;?>
+
+
+
+

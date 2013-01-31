@@ -9,8 +9,6 @@ $disable-magic-sprite-selectors:true;
 *[class^="ui-"], *[class*=" ui-"]{
     display:inline-block;
     background: sprite($ui-sprites,ok) no-repeat;
-    vertical-align: middle;
-    margin: -.3em .5ex;
     @include sprite-dimensions($ui-sprites, ok);
     @include opacity(0.5);
 }
@@ -19,14 +17,12 @@ $disable-magic-sprite-selectors:true;
 }
 .ui-shopping-cart {
     @include sprite-dimensions($ui-sprites, shopping-cart);
-    margin-bottom: 2px;
 }
 .ui-comments {
     @include sprite-dimensions($ui-sprites, comments);
 }
 .ui-user {
     @include sprite-dimensions($ui-sprites, user);
-    margin-bottom: 1px;
 }
 /*
 *[class*="ui-big-"]{
@@ -56,8 +52,6 @@ $disable-magic-sprite-selectors:true;
 	*[class^="ui-"], *[class*=" ui-"]{
 		display:inline-block;
 		background: sprite($inverted-ui-sprites,ok) no-repeat;
-		vertical-align: middle;
-		margin: -.3em .5ex;
 		@include sprite-dimensions($inverted-ui-sprites, ok);
 		@include opacity(1);
 	}

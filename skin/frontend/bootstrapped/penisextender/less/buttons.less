@@ -15,10 +15,10 @@
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
   *line-height: @baseLineHeight;
-  text-align: center;
+	text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  .buttonBackground(@btnBackground, @btnBackgroundHighlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+  .buttonBackground(@btn-background, @btn-background-highlight, @grayDark, 0 1px 1px rgba(255,255,255,.75));
   //border: 1px solid @btnBorder;
   //*border: 0; // Remove the border to prevent IE7's black border on input:focus
   //border-bottom-color: darken(@btnBorder, 5%);
@@ -29,8 +29,8 @@
   &:hover {
     color: @grayDark;
     text-decoration: none;
-    background-color: @btnBackgroundHighlight;
-    *background-color: darken(@btnBackgroundHighlight, 5%); /* Buttons in IE7 don't get borders, so darken on hover */
+    background-color: @btn-background-highlight;
+    *background-color: darken(@btn-background-highlight, 5%); /* Buttons in IE7 don't get borders, so darken on hover */
     background-position: 0 -15px;
 
     // transition is only when going to hover, otherwise the background
@@ -46,8 +46,8 @@
   // Active state
   &.active,
   &:active {
-    background-color: darken(@btnBackgroundHighlight, 10%);
-    background-color: darken(@btnBackgroundHighlight, 15%) e("\9");
+    background-color: darken(@btn-background-highlight, 10%);
+    background-color: darken(@btn-background-highlight, 15%) e("\9");
     background-image: none;
     outline: 0;
     .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
@@ -57,15 +57,17 @@
   &.disabled,
   &[disabled] {
     cursor: default;
-    background-color: darken(@btnBackgroundHighlight, 10%);
+    background-color: darken(@btn-background-highlight, 10%);
     background-image: none;
     .opacity(65);
     .box-shadow(none);
   }
 
+	[class^="ui-"], .btn [class*=" ui-"] {
+		margin: -0.05em 0.1em;
+		position: relative;
+	}
 }
-
-
 
 // Button Sizes
 // --------------------------------------------------
@@ -75,6 +77,8 @@
   padding: @paddingLarge;
   font-size: @fontSizeLarge;
   .border-radius(@borderRadiusLarge);
+  
+	font-weight: 700;
 }
 .btn-large [class^="icon-"],
 .btn-large [class*=" icon-"] {
@@ -148,27 +152,27 @@ input[type="button"] {
   border-color: rgba(0,0,0,.15) rgba(0,0,0,.15) rgba(0,0,0,.25);
 }
 .btn-primary {
-  .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  .buttonBackground(@btn-background-primary, @btn-background-primary-highlight);
 }
 // Warning appears are orange
 .btn-warning {
-  .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+  .buttonBackground(@btn-background-warning, @btn-background-warning-highlight);
 }
 // Danger and error appear as red
 .btn-danger {
-  .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+  .buttonBackground(@btn-background-danger, @btn-background-danger-highlight);
 }
 // Success appears as green
 .btn-success {
-  .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+  .buttonBackground(@btn-background-success, @btn-background-success-highlight);
 }
 // Info appears as a neutral blue
 .btn-info {
-  .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+  .buttonBackground(@btn-background-info, @btn-background-info-highlight);
 }
 // Inverse appears as dark gray
 .btn-inverse {
-  .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+  .buttonBackground(@btn-background-inverse, @btn-background-inverse-highlight);
 }
 
 
