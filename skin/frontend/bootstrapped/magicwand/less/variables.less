@@ -1,0 +1,356 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+
+
+// Grays
+// -------------------------
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+
+// Used colors for theme
+@transparent:           rgba(0,0,0,0);
+@black:                 #111;
+@white:					#fff;
+@lightPink:				#fff3fa;
+@green:				 	#4faf7b;
+@greenDarker:			#809c8d;
+@pink:				    #f257b3;
+@purple:				#684459;
+
+// Scaffolding
+// -------------------------
+@body-background:        @lightPink;
+@body-background-image:  url('../images/circles.png');
+@text-color:             @purple;
+
+
+// Links
+// -------------------------
+@link-color:              @greenDarker;
+@link-color-hover:        darken(@link-color, 15%);
+
+
+// Typography
+// -------------------------
+  
+@font-family-sans-serif:  Verdana, Geneva, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+@font-famely-highlight:   DDZDalet, 'Arial Black', Gadget, sans-serif;
+
+@font-size-base:          14px;
+@font-size-large:         40px; // ~18px
+@font-size-small:         @font-size-base * 0.85; // ~12px
+@font-size-mini:          @font-size-base * 0.75; // ~11px
+
+@line-height-base:        20px;
+
+@headings-color:		  @pink;
+@headings-font-family:    inherit; //- empty to use BS default, @font-family-base
+@headings-font-weight:    bold;    // instead of browser default, bold
+
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 1.5 line-height
+
+
+@padding-large:           15px 19px; // 44px
+@padding-small:           2px 10px;  // 26px
+@padding-mini:            0 6px;   // 22px
+
+@border-radius-base:      20px;
+@border-radius-large:     0;
+@border-radius-small:     0;
+
+
+// Tables
+// -------------------------
+@table-background:                   @purple; // overall background-color
+@table-background-accent:            @pink; // for striping
+@table-background-hover:             rgba(128, 128, 128, .75); // for hover
+
+@table-border:                       @pink; // table and cell border
+
+// Buttons
+// -------------------------
+@btn-color:							 @white;
+@btn-color-highlight:				 @green;
+@btn-color-primary:					 @white;
+@btn-color-primary-highlight:		 @white;
+
+@btn-background:                     @green;
+@btn-background-highlight:           @greenDarker;
+
+@btn-background-primary:              @pink;
+@btn-background-primary-highlight:    @purple;//spin(@btn-background-primary, 20%);
+
+@btn-background-info:                 #5bc0de;
+@btn-background-info-highlight:       #2f96b4;
+
+@btn-background-success:              #62c462;
+@btn-background-success-highlight:    #51a351;
+
+@btn-background-warning:              #F63; // lighten(#FD6, 15%);
+@btn-background-warning-highlight:    #F63;
+
+@btn-background-danger:               #ee5f5b;
+@btn-background-danger-highlight:     #bd362f;
+
+@btn-background-inverse:              @green;
+@btn-background-inverse-highlight:    @pink;
+
+
+// Forms
+// -------------------------
+@input-background:               @table-background-accent;
+@input-background-disabled:      @grayLighter;
+
+@input-border:                   @pink;
+@input-border-radius:            0;
+@input-border-radius-search:     @border-radius-base;
+
+@input-color-placeholder:        @grayLight;
+
+@input-height:                   @line-height-base + 14px; // base line-height + 12px vertical padding + 2px top/bottom border
+
+@form-actions-background:        @table-background-hover;
+
+
+// Dropdowns
+// -------------------------
+
+@dropdown-background:            #fff;
+@dropdown-border:                rgba(0,0,0,.2);
+@dropdown-divider-top:            #e5e5e5;
+@dropdown-divider-bottom:          @dropdown-link-color;
+
+@dropdown-link-color:             @grayDark;
+@dropdown-link-color-hover:        #fff;
+@dropdown-link-color-active:       @dropdown-link-color;
+
+@dropdown-link-background-active:  @link-color;
+@dropdown-link-background-hover:   @dropdown-link-background-active;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+
+@zindex-dropdown:          1000;
+@zindex-popover:           1010;
+@zindex-tooltip:           1030;
+@zindex-navbar-fixed:      1030;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
+
+
+// Navbar
+// -------------------------
+
+@navbar-collapse-width:            979px;
+@navbar-collapse-width-desktop:    @navbar-collapse-width + 1;
+
+@navbar-height:                    44px;
+@navbar-background-highlight:      @btn-background;
+@navbar-background:                @transparent;
+@navbar-border:                    darken(@navbar-background-highlight, 5%);
+@navbar-border-right:              darken(@navbar-background-highlight, 2%);
+@navbar-border-left:               darken(@navbar-background-highlight, 8%);
+
+@navbar-text:                      @text-color;
+@navbar-link-color:                @link-color;
+@navbar-link-color-hover:          @link-color-hover;
+@navbar-link-color-active:         @link-color-hover;
+@navbar-link-background-hover:     transparent;
+@navbar-link-background-active:    darken(@navbar-background, 5%);
+
+@navbar-brand-color:               @navbar-link-color;
+
+// Inverted navbar
+@navbar-inverse-background:                @green;
+@navbar-inverse-background-highlight:      @greenDarker;
+@navbar-inverse-border:                    #252525;
+
+@navbar-inverse-text:                      @grayLight;
+@navbar-inverse-link-color:                @grayLight;
+@navbar-inverse-link-color-hover:          #fff;
+@navbar-inverse-link-color-active:         @navbar-inverse-link-color-hover;
+@navbar-inverse-link-background-hover:     transparent;
+@navbar-inverse-link-background-active:    @navbar-inverse-background;
+
+@navbar-inverse-search-background:         lighten(@navbar-inverse-background, 25%);
+@navbar-inverse-search-background-focus:   #fff;
+@navbar-inverse-search-border:             @navbar-inverse-background;
+@navbar-inverse-search-placeholder-color:  #ccc;
+
+@navbar-inverse-brand-color:               @navbar-inverse-link-color;
+
+
+// Pagination
+// -------------------------
+@pagination-background:                #fff;
+@pagination-background-active:         #f5f5f5;
+
+@pagination-border:                    #ddd;
+
+
+// Jumbotron
+// -------------------------
+@jumbotron-background:           @grayDarker;
+@jumbotron-heading-color:        inherit;
+@jumbotron-lead-color:           inherit;
+
+
+// Form states and alerts
+// -------------------------
+
+@state-warning-text:             #c09853;
+@state-warning-background:       #fcf8e3;
+@state-warning-border:           darken(spin(@state-warning-background, -10), 3%);
+
+@state-error-text:               #b94a48;
+@state-error-background:         #f2dede;
+@state-error-border:             darken(spin(@state-error-background, -10), 3%);
+
+@state-success-text:             #468847;
+@state-success-background:       #dff0d8;
+@state-success-border:           darken(spin(@state-success-background, -10), 5%);
+
+@state-info-text:                #3a87ad;
+@state-info-background:          #d9edf7;
+@state-info-border:              darken(spin(@state-info-background, -10), 7%);
+
+
+// Tooltips and popovers
+// -------------------------
+@tooltip-color:            #fff;
+@tooltip-background:       rgba(0,0,0,.9);
+@tooltip-arrow-width:      5px;
+@tooltip-arrow-color:      @tooltip-background;
+
+@popover-background:       #fff;
+@popover-arrow-width:      10px;
+@popover-arrow-color:      #fff;
+@popover-title-background: darken(@popover-background, 3%);
+
+// Special enhancement for popovers
+@popover-arrow-outer-width:  @popover-arrow-width + 1;
+@popover-arrow-outer-color:  rgba(0,0,0,.25);
+
+
+// Miscellaneous
+// -------------------------
+
+// Hr border color
+@hr-border:                     @grayLighter;
+
+// Horizontal forms & lists
+@component-offset-horizontal:   180px;
+
+// Wells
+@well-background:               @green;
+
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+@grid-columns:             12;
+@grid-column-width:         60px;
+@grid-gutter-width:         20px;
+@grid-row-width:            (@grid-columns * @grid-column-width) + (@grid-gutter-width * (@grid-columns - 1));
+
+// 1200px min
+@grid-column-width-1200:     70px;
+@grid-gutter-width-1200:     30px;
+@grid-row-width-1200:        (@grid-columns * @grid-column-width-1200) + (@grid-gutter-width-1200 * (@grid-columns - 1));
+
+// 768px-979px
+@grid-column-width-768:      42px;
+@grid-gutter-width-768:      20px;
+@grid-row-width-768:         (@grid-columns * @grid-column-width-768) + (@grid-gutter-width-768 * (@grid-columns - 1));
+
+// Depricated:
+@monoFontFamily: @font-family-monospace;
+@sansFontFamily: @font-family-sans-serif;
+@placeholderText: @input-color-placeholder;
+@baseLineHeight: @line-height-base;
+@baseBorderRadius: @border-radius-base;
+@borderRadiusLarge: @border-radius-large;
+@borderRadiusSmall: @border-radius-small;
+@btnBackground: @btn-background;
+@btnBackgroundHighlight: @btn-background-highlight;
+@baseFontSize: @font-size-base;
+@fontSizeLarge: @font-size-large;
+@fontSizeSmall: @font-size-small;
+@fontSizeMini: @font-size-mini;
+@paddingLarge: @padding-large;
+@paddingSmall: @padding-small;
+@paddingMini: @padding-mini;
+@btnPrimaryBackground: @btn-background-primary;
+@btnPrimaryBackgroundHighlight: @btn-background-primary-highlight;
+@btnWarningBackground: @btn-background-warning;
+@btnWarningBackgroundHighlight: @btn-background-warning-highlight;
+@btnDangerBackground: @btn-background-danger;
+@btnDangerBackgroundHighlight: @btn-background-danger-highlight;
+@btnSuccessBackground: @btn-background-success;
+@btnSuccessBackgroundHighlight: @btn-background-success-highlight;
+@btnInfoBackground: @btn-background-info;
+@btnInfoBackgroundHighlight: @btn-background-info-highlight;
+@btnInverseBackground: @btn-background-inverse;
+@btnInverseBackgroundHighlight: @btn-background-inverse-highlight;
+@linkColor: @link-color;
+@linkColorHover: @link-color-hover;
+
+@navbarText: @navbar-text;
+@navbarBackground: @navbar-background;
+@navbarBackgroundHighlight: @navbar-background-highlight;
+@navbarHeight: @navbar-height;
+@navbarBorder: @navbar-border;
+@navbarBrandColor: @navbar-brand-color;
+@navbarLinkColor: @navbar-link-color;
+@navbarLinkColorHover: @navbar-link-color-hover;
+@navbarLinkColorActive: @navbar-link-color-active;
+@navbarLinkBackgroundHover: @navbar-link-background-hover;
+@navbarLinkBackgroundActive: @navbar-link-background-active;
+
+@navbarInverseText: @navbar-inverse-text;
+@navbarInverseBackground: @navbar-inverse-background;
+@navbarInverseBackgroundHighlight: @navbar-inverse-background;
+@navbarInverseBorder: @navbar-inverse-border;
+@navbarInverseLinkColor: @navbar-inverse-link-color;
+@navbarInverseLinkColorHover: @navbar-inverse-link-color-hover;
+@navbarInverseLinkColorActive: @navbar-inverse-link-color-active;
+@navbarInverseLinkBackground: @navbar-inverse-background;
+@navbarInverseLinkBackgroundHover: @navbar-inverse-background;
+@navbarInverseLinkBackgroundHoverActive: @navbar-inverse-background;
+@navbarInverseLinkBackgroundActive: @navbar-inverse-link-background-active;
+@navbarInverseColor: @navbar-inverse-background;
+@navbarInverseColorHover: @navbar-inverse-background-highlight;
+@navbarInverseSearchPlaceholderColor: @navbar-inverse-search-placeholder-color;
+@navbarInverseSearchBackground: @navbar-inverse-search-background;
+@navbarInverseSearchBorder: @navbar-inverse-search-border;
+@navbarInverseSearchBackgroundFocus: @navbar-inverse-search-background-focus;
+
+@gridColumns: @grid-columns;
+
+@dropdownBorder: @dropdown-border;
+@dropdownBackground: @dropdown-background;
