@@ -144,7 +144,7 @@ Default layout, loads most of the pages
 					</block>
 
 				</block>
-				<block type="core/template" name="footer.copyright" template="bootstrap/grids/row-fluid.phtml">     
+				<block type="core/template" name="footer.copyright">     
 					<block type="core/template" name="footer.copyright.content" as="copyright" template="page/html/copyright.phtml"></block>
 				</block>
 			</block>

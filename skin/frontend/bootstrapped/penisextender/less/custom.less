@@ -1,157 +1,138 @@
 /*!
- * @author Artūrs Jansons
- */
-img {
+* @author Artūrs Jansons
+*/
+img{
 	max-width: 100%;
 }
-.btn {
-    color: white;
+.btn{
+	color: white;
 }
-
 .btn.radio, .btn.checkbox{
-    text-align: left;
+	text-align: left;
 	margin-bottom: 1em;
 }
-.product-options .radio img, .product-options .checkbox img {
-    height: 100px;
-    margin: -50px 5px;
-    position: absolute;
-    right: 0;
-    top: 50%;
+.product-options .radio img, .product-options .checkbox img{
+	height: 100px;
+	margin: -50px 5px;
+	position: absolute;
+	right: 0;
+	top: 50%;
 }
-.product-options .radio.btn input[type="radio"], .product-options .checkbox.btn input[type="checkbox"] {
-    margin: 20px;
+.product-options .radio.btn input[type="radio"], .product-options .checkbox.btn input[type="checkbox"]{
+	margin: 20px;
 }
-.product-options .radio.btn strong, .product-options .checkbox.btn strong {
-    font-size: 140%;
-    line-height: 21px;
+.product-options .radio.btn strong, .product-options .checkbox.btn strong{
+	font-size: 140%;
+	line-height: 21px;
 }
-
-.product-options .radio, .product-options .checkbox {
-    position: relative;
+.product-options .radio, .product-options .checkbox{
+	position: relative;
 }
-
-.product-options .radio.btn-group .btn + .btn, .product-options .checkbox.btn-group .btn + .btn {
-    padding-right: 110px;
-    width: 318px;
+.product-options .radio.btn-group .btn + .btn, .product-options .checkbox.btn-group .btn + .btn{
+	padding-right: 110px;
+	width: 318px;
 }
-
-.nav-list > li > a, .nav-list .nav-header, .nav-list > li > p {
-    padding: 10px 0px;
-    margin-left: 0;
-    margin-right: 0;
-    border-bottom: #444 solid 1px;
-    text-shadow: none;
+.nav-list > li > a, .nav-list .nav-header, .nav-list > li > p{
+	padding: 10px 0px;
+	margin-left: 0;
+	margin-right: 0;
+	border-bottom: #444 solid 1px;
+	text-shadow: none;
 }
-
-.nav-list > li > a, .nav-list > li > p {
-    color: inherit;
+.nav-list > li > a, .nav-list > li > p{
+	color: inherit;
 }
-
-.nav-list {
-    padding-left: 0;
-    padding-right: 0;
+.nav-list{
+	padding-left: 0;
+	padding-right: 0;
 }
-
-.well {
-    background-color: #151515;
-    padding: 10px;
+.well{
+	background-color: #151515;
+	padding: 10px;
 }
-
-.footer .nav-header {
-    font-size: 22px;
-    color: white;
+.footer{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.buttonBackground(@btn-background, @btn-background-highlight, @btn-color, -1px 1px 1px rgba(128,128,128,0.5));
 }
-
-.navbar .nav-header {
-    padding-top: 10px;
-    text-shadow: none;
+.footer .nav-header{
+	font-size: 22px;
+	color: white;
 }
-
-.nav > li > a:hover {
-    background-color: inherit;
-    color: white;
+.navbar .nav-header{
+	padding-top: 10px;
+	text-shadow: none;
 }
-
-.more-views > a img {
-    background-color: #151515;
-    padding: 10px;
+.nav > li > a:hover{
+	background-color: inherit;
+	color: white;
 }
-
-.product-options-bottom .shipping-price .price small {
-    font-size: 24px;
+.more-views > a img{
+	background-color: #151515;
+	padding: 10px;
 }
-
-.product-options-bottom .shipping-price {
-    padding-left: 80px;
-    position: relative;
-    display: block;
-    margin-bottom: 0;
-    font-family: @font-famely-abel;
-    font-weight: normal;
+.product-options-bottom .shipping-price .price small{
+	font-size: 24px;
 }
-
-.product-options-bottom .shipping-price strong {
-    font-size: 25px ;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: block;
+.product-options-bottom .shipping-price{
+	padding-left: 80px;
+	position: relative;
+	display: block;
+	margin-bottom: 0;
+	font-family: @font-famely-abel;
+	font-weight: normal;
 }
-
-.product-options-bottom .shipping-price em {
-    font-size: 21px;
-    text-transform: uppercase;
-    font-style: normal;
-    display: block;
+.product-options-bottom .shipping-price strong{
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: block;
 }
-
-.product-options-bottom .shipping-price .price {
-    float: right;
-    font-size: 50px ;
-    font-weight: 700 ;
-    padding-top: 10px;
-    font-family: @font-family-sans-serif;
+.product-options-bottom .shipping-price em{
+	font-size: 21px;
+	text-transform: uppercase;
+	font-style: normal;
+	display: block;
 }
-
-.product-options-bottom .help-block {
-    text-align: center;
-    font-style: italic;
+.product-options-bottom .shipping-price .price{
+	float: right;
+	font-size: 50px;
+	font-weight: 700;
+	padding-top: 10px;
+	font-family: @font-family-sans-serif;
 }
-
-.product-options-bottom .shipping-price img {
-    position: absolute;
-    left: -24px;
-    top: -24px;
+.product-options-bottom .help-block{
+	text-align: center;
+	font-style: italic;
 }
-
-.btn.btn-primary {
+.product-options-bottom .shipping-price img{
+	position: absolute;
+	left: -24px;
+	top: -24px;
+}
+.btn.btn-primary{
 	letter-spacing: -0.15ex;
 	text-transform: uppercase;
 	//background: #151515;
 	//color: darken(@btnPrimaryBackground, 10%);
 	color: rgba(0, 0, 0, 0.5);
 }
-
-.full-product-price .price {
-    font-size: 38px;
-    color: white;
-    font-weight: 700;
-    padding: 20px 0;
-    display: block;
-    text-align: center;
+.full-product-price .price{
+	font-size: 38px;
+	color: white;
+	font-weight: 700;
+	padding: 20px 0;
+	display: block;
+	text-align: center;
 }
-
-h1 {
-    color: white;
+h1{
+	color: white;
 }
-
-h2 {
-    font-size: 18px;
-    color: white;
+h2{
+	font-size: 18px;
+	color: white;
 }
-
-
-.nav-collapse {
+.nav-collapse{
 	position: relative;
 	padding-right: 56px;
 }
@@ -164,7 +145,7 @@ h2 {
 	margin-left: -58px;
 	padding-top: 1em;
 	box-shadow: -2px -2px 4px rgba(0, 0, 0, .5);
-	a {
+	a{
 		color: #880;
 		text-shadow: 0 0.1em 0.1em rgba(128, 128, 128, 0.5);
 	}
@@ -174,18 +155,17 @@ h2 {
 		position: absolute;
 		bottom:-18px;
 		left:0;
-		width: 0; 
-		height: 0; 
+		width: 0;
+		height: 0;
 		border-left: 30px solid transparent;
 		border-right: 30px solid transparent;
 		border-top: 18px solid #d3df18;
 	}
+	
 }
-
-h4 {
-color: #fff;
+h4{
+	color: #fff;
 }
-
-.add-to-cart .btn.btn-primary {
+.add-to-cart .btn.btn-primary{
 	width: 100%;
 }
