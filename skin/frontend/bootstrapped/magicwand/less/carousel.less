@@ -11,26 +11,34 @@
 
 .carousel-inner {
   overflow: hidden;
-  width: 100%;
+  //width: 100%;
+  width: 980px;
   position: relative;
+  left: -20px;
   border-bottom: rgba( 0, 0, 0, .5) solid 1px;
 }
 
 .carousel {
-
 	.item {
+		//.beyond-horizontally(21px);
+		padding: 0 20px;
 		display: none;
 		position: relative;
 		.transition(.6s ease-in-out left);
 	//    -webkit-transition: left 0.5s ease;
 		height: 450px;
-		overflow: hidden;	
+		overflow: hidden;
 		h1 {
-			padding-top: 30px;
-			font-size: 50px;
+			padding-top: 0.5em;
+			font-family: @font-family-arial-black;
+			font-size: 52pt;
+			font-weight: bold;
 			text-transform: uppercase;
-			letter-spacing: -.15ex;
+			letter-spacing: -0.02em;
 			margin: 0; // sensitive to block size
+			color: @green;
+			.text-outline(2px, 0, #fff);
+			line-height: 1;
 			a {
 				color: inherit;
 				&:hover{
@@ -41,7 +49,7 @@
 		h2 {
 			text-transform: uppercase;
 			font-size: 28px;
-			padding-top: 20px;
+			font-family: @font-family-arial-black;
 		}
 		ul {
 			list-style-image: url("../images/inverted-ui/ok.png");
@@ -49,6 +57,9 @@
 		}
 		li {
 			font-size: 18px;
+			font-family: @font-family-arial;
+			font-style: italic;
+			font-weight: bold;
 		}
   }
 

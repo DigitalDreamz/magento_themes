@@ -25,19 +25,13 @@
   //padding-right: 20px;
   //#gradient > .vertical(@navbar-background-highlight, @navbar-background);
   //border: 1px solid @navbarBorder;
-  .buttonBackground(@btn-background, @btn-background-highlight, @grayDark, 0 1px 1px rgba(255,255,255,0.75));
-  background-color: @btn-background;
+  .buttonBackground(@btn-background, @btn-background-highlight, @btn-color, @btn-shadow);
   //background-size: 3px 100%;
   .border-radius(@baseBorderRadius);
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
 
   // Prevent floats from breaking the navbar
   .clearfix();
-}
-.navbar-inner.nav-tabs {
-	margin-bottom: 0;
-	background: -webkit-linear-gradient(0, rgba(128, 128, 128, .5) 75%, transparent 25%);
-    background-size: 3px 100%;
 }
 // Set width to auto for default container
 // We then reset it for fixed navbars in the #gridSystem mixin
@@ -225,9 +219,7 @@
 }
 .navbar .nav > li {
   float: left;
-  border-right: @gray dashed 1px;
 }
-
 .navbar .nav > li.nav-header, .navbar .nav > li > a {
   padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
 }
@@ -235,7 +227,6 @@
 .navbar .nav > li > a {
   float: none;
   // Vertically center the text given @navbarHeight
-  color: @navbarLinkColor;
   text-decoration: none;
 }
 .navbar .nav .dropdown-toggle .caret {
@@ -245,8 +236,7 @@
 // Hover
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
-  color: @navbarLinkColorHover;
+  background-color: @navbar-background-highlight; // "transparent" is default to differentiate :hover from .active
   text-decoration: none;
 }
 
@@ -254,9 +244,7 @@
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: @navbarLinkColorActive;
   text-decoration: none;
-  background-color: @navbarLinkBackgroundActive;
   .box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
 }
 

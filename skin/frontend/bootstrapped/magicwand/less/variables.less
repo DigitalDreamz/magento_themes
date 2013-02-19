@@ -16,11 +16,15 @@
 @grayLighter:           #eee;
 
 // Used colors for theme
-@transparent:           rgba(0,0,0,0);
+@transparent-white:		rgba(255,255,255,0);
+@transparent-gray:		rgba(128,128,128,0);
+@transparent-black:		rgba(0,0,0,0);
+@transparent:           @transparent-black;
+
 @black:                 #111;
 @white:					#fff;
 @lightPink:				#fff3fa;
-@green:				 	#4faf7b;
+@green:				 	#77C9A0; //#70D29E;
 @greenDarker:			#809c8d;
 @pink:				    #f257b3;
 @purple:				#684459;
@@ -41,11 +45,11 @@
 // Typography
 // -------------------------
   
-@font-family-sans-serif:  Verdana, Geneva, sans-serif;
+@font-family-sans-serif:  Arial, Helvetica, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
-@font-famely-highlight:   DDZDalet, 'Arial Black', Gadget, sans-serif;
+@font-family-highlight:   @font-family-arial-black;
 
 @font-size-base:          14px;
 @font-size-large:         40px; // ~18px
@@ -64,19 +68,19 @@
 // Based on 14px font-size and 1.5 line-height
 
 
-@padding-large:           15px 19px; // 44px
+@padding-large:           .5em .5em .1em .5em; // 44px
 @padding-small:           2px 10px;  // 26px
 @padding-mini:            0 6px;   // 22px
 
-@border-radius-base:      20px;
-@border-radius-large:     0;
+@border-radius-base:      10px;
+@border-radius-large:     @border-radius-base;
 @border-radius-small:     0;
 
 
 // Tables
 // -------------------------
-@table-background:                   @purple; // overall background-color
-@table-background-accent:            @pink; // for striping
+@table-background:                   @white; // overall background-color
+@table-background-accent:            @grayLighter; // for striping
 @table-background-hover:             rgba(128, 128, 128, .75); // for hover
 
 @table-border:                       @pink; // table and cell border
@@ -88,10 +92,15 @@
 @btn-color-primary:					 @white;
 @btn-color-primary-highlight:		 @white;
 
-@btn-background:                     @green;
-@btn-background-highlight:           @greenDarker;
+@btn-border:                         @white;
 
-@btn-background-primary:              @pink;
+@btn-shadow:						 0 1px 1px rgba(0,0,0,0.75);
+@btn-font-family-primary:            @font-family-impact;
+
+@btn-background:                     #5DCD90;
+@btn-background-highlight:           #489E6F;
+
+@btn-background-primary:              @pink url('../../magicwand/images/white_leather_gs-w.png');
 @btn-background-primary-highlight:    @purple;//spin(@btn-background-primary, 20%);
 
 @btn-background-info:                 #5bc0de;
@@ -168,18 +177,18 @@
 @navbar-collapse-width-desktop:    @navbar-collapse-width + 1;
 
 @navbar-height:                    44px;
-@navbar-background-highlight:      @btn-background;
+@navbar-background-highlight:      @transparent;
 @navbar-background:                @transparent;
-@navbar-border:                    darken(@navbar-background-highlight, 5%);
-@navbar-border-right:              darken(@navbar-background-highlight, 2%);
-@navbar-border-left:               darken(@navbar-background-highlight, 8%);
+@navbar-border:                    none;
+@navbar-border-right:              rgba(0,0,0,.5) dotted 1px;
+@navbar-border-left:               rgba(255,255,255,.5) dotted 1px;
 
 @navbar-text:                      @text-color;
-@navbar-link-color:                @link-color;
+@navbar-link-color:                @white;
 @navbar-link-color-hover:          @link-color-hover;
 @navbar-link-color-active:         @link-color-hover;
-@navbar-link-background-hover:     transparent;
-@navbar-link-background-active:    darken(@navbar-background, 5%);
+@navbar-link-background-hover:     @transparent;
+@navbar-link-background-active:    @transparent;
 
 @navbar-brand-color:               @navbar-link-color;
 

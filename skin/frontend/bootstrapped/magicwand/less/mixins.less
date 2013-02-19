@@ -374,8 +374,6 @@
   color: @textColor;
   text-shadow: @textShadow;
   #gradient > .vertical(@primaryColor, @secondaryColor);
-  border-color: @secondaryColor @secondaryColor darken(@secondaryColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 
 // Gradients
@@ -521,20 +519,19 @@
   color: @text-color;
   text-shadow: @textShadow;
   #gradient > .vertical(@startColor, @endColor);
-  border-color: @endColor @endColor darken(@endColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
   .reset-filter();
 
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:active, &.active, &.disabled, &[disabled] {
     color: @text-color;
-    background-color: @endColor;
+    background-color: darken(@endColor, 10%) e("\9");
   }
 
   // IE8 can't handle box-shadow to show active, so we darken a bit ourselves
   &:active,
   &.active {
     background-color: darken(@endColor, 10%) e("\9");
+	background-image: none;
   }
 }
 
@@ -664,4 +661,10 @@
   }
 
 
+}
+
+.text-outline(@width: ~'2px', @offset: ~'0', @color: ~'rgba(128,128,128,.5)'){
+	-moz-text-shadow: @width @width @offset @color,(@width)*-1 (@width)*-1 @offset @color,@width (@width)*-1 @offset @color,(@width)*-1 @width @offset @color;
+  text-stroke-width: @width;
+  text-stroke-color: @color;
 }

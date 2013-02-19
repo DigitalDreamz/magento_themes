@@ -14,4 +14,4 @@ rm css/icons.css .tmp
 # LESS
 # Requirement: lessc, recess
 cd ./less/
-lessc bootstrap.less > ../css/bootstrap.css
+lessc bootstrap.less > ../css/bootstrap.min.css
