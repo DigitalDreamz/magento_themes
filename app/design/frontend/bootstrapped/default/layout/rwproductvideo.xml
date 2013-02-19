@@ -27,6 +27,11 @@ Adds video after thumbs
 -->
 	
     <catalog_product_view translate="label">
+		<reference name="head">
+            <action method="removeItem"><type>css</type><name>css/productvideo/style.css</name></action>
+            <action method="removeItem" ifconfig="rocketweb_productvideo/settings/tinybox"><type>css</type><name>css/tinybox2/style.css</name></action>
+            <action method="removeItem" ifconfig="rocketweb_productvideo/settings/tinybox"><type>js</type><name>rocketweb/tinybox2/tinybox.js</name></action>
+		</reference>		
     	<reference name="content">
     		<remove name="media_video"/>
     	</reference>
