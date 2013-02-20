@@ -21,14 +21,7 @@
     $_helper = $this->helper('catalog/output');
 ?>
 
-<?php if($_video = $_product->getData('aw_video')):?>
-<div class="product-image product-image-zoom">
-	<a  data-toggle="modal" href="#zoomVideo"><?php echo $_video; ?></a>
-    <div class="modal fade" id="zoomVideo">
-		<?php echo $_video; ?>
-    </div>
-</div>
-<?php endif;?>
+<?php echo $this->getChildHtml('media_video_preview') ?>
 
 <?php /*if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
 <div class="product-image product-image-zoom">
@@ -66,11 +59,6 @@
 <div class="more-views">
     <h2><?php echo $this->__('More Views') ?></h2>
 
-	<?php /*/ Video ?>
-	<?php if($_video = $_product->getData('aw_video')):?>
-		<a href="#zoomVideo" role="button" data-toggle="modal" ><?php echo $_video; ?></a>
-	<?php endif;*/?>
-
 	<?php // Images ?>
     <?php foreach ($this->getGalleryImages() as $_image): ?>
 
@@ -107,5 +95,3 @@
     </table>
     <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
 <?php endif;?>
-
-
