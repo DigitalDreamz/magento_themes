@@ -2,7 +2,7 @@
 $.noConflict();
 jQuery(function($){
 	$('.carousel-nav a').click(function(){
-		$('#carousel1').carousel($(this).data('to'));
+		$($(this).closest('.carousel')[0]).carousel($(this).data('to'));
 	});
 
 	$('.nav-tabs a').click(function (e) {
